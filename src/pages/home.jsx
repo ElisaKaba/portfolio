@@ -1,17 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-const Home = () => {
+const Home = () =>  {
   return (
     <section className="home">
       <section className="background">
         <div className="presentationEtContact">
           <h1 className="nom">Elisa Kaba</h1>
-          <h2 className="titre">Développeuse FrontEnd</h2>
-          <h3 className="recherche">
-            Recherche alternance 16 mois: Conceptrice développeuse d'aplicatons
-            JAVA <br />
-            Dès janvier 2023
-          </h3>
+          <h2 className="titre">Conceptrice développeuse d'applications</h2>
+                    <h3 className="recherche">
+                        Formation fullstack JAVA ANGULAR REACT<br/>
+                        Plus sensible au frontend avec un intérêt particulier pour les question d'UX-UI</h3>
           <NavLink className="contactSend" to="/contact">
             <div className="enveloppe">
               <img
