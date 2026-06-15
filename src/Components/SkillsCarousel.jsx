@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getSkills } from '../services/skillsService';
-import "../styles/components/carousel.scss"
+
 
 function SkillsCarousel() {
   const [skills, setSkills] = useState([]);

@@ -7,4 +7,4 @@ const Competences = () => {
   );
 };
 
-export default Projets;
+export default Competences;

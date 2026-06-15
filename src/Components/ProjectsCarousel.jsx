@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { getProjects } from '../services/projectsService';
-import "../styles/components/carousel.scss"
 
 function ProjectsCarousel() {
   const [projects, setProjects] = useState([]);
