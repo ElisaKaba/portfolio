@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
-import { getProjects } from '../services/projectsService';
+import { useEffect, useState } from "react";
+import { getProjects } from "../services/projectsService";
+
 
 function ProjectsCarousel() {
   const [projects, setProjects] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     async function loadProjects() {
@@ -26,6 +28,10 @@ function ProjectsCarousel() {
     );
   };
 
+  const closeImageModal = () => {
+    setSelectedImage(null);
+  };
+
   if (projects.length === 0) {
     return null;
   }
@@ -33,60 +39,78 @@ function ProjectsCarousel() {
   const currentProject = projects[currentIndex];
 
   return (
-    <section className="carousel-section projects-section">
-      <div className="carousel-header">
-        <p className="carousel-subtitle">Ce que j’ai réalisé</p>
+    <section className="projects-carousel-section">
+      <div className="projects-carousel-header">
+        <p className="projects-carousel-subtitle">Ce que j’ai réalisé</p>
         <h2>Mes projets</h2>
       </div>
 
-      <div className="carousel-wrapper">
+      <div className="projects-carousel-wrapper">
         <button
-          className="carousel-btn"
+          className="projects-carousel-btn projects-carousel-btn-prev"
           onClick={prevSlide}
           aria-label="Projet précédent"
+          type="button"
         >
           ‹
         </button>
 
-        <article className="carousel-card project-card">
+        <article className="projects-carousel-card">
           {currentProject.image_url && (
-            <img
-              className="project-image"
-              src={currentProject.image_url}
-              alt={currentProject.title}
-            />
+            <button
+              className="projects-carousel-thumbnail-button"
+              type="button"
+              onClick={() =>
+                setSelectedImage({
+                  src: currentProject.image_url,
+                  alt: currentProject.title,
+                })
+              }
+              aria-label={`Agrandir l’aperçu du projet ${currentProject.title}`}
+            >
+              <img
+                className="projects-carousel-thumbnail"
+                src={currentProject.image_url}
+                alt={`Aperçu du projet ${currentProject.title}`}
+              />
+              <span className="projects-carousel-thumbnail-label">
+                Agrandir
+              </span>
+            </button>
           )}
 
-          <div className="project-content">
-            <p className="card-category">Projet</p>
+          <div className="projects-carousel-content">
+            <p className="projects-carousel-category">Projet</p>
+
             <h3>{currentProject.title}</h3>
 
-            <p className="card-description">
+            <p className="projects-carousel-short-description">
               {currentProject.short_description}
             </p>
 
             {currentProject.description && (
-              <p className="project-long-description">
+              <p className="projects-carousel-long-description">
                 {currentProject.description}
               </p>
             )}
 
             {currentProject.technologies && (
-              <div className="tech-list">
+              <div className="projects-carousel-tech-list">
                 {currentProject.technologies.map((tech) => (
-                  <span key={tech} className="tech-pill">
+                  <span key={tech} className="projects-carousel-tech-pill">
                     {tech}
                   </span>
                 ))}
               </div>
             )}
 
-            <div className="project-links">
+            <div className="projects-carousel-links">
               {currentProject.github_url && (
                 <a
                   href={currentProject.github_url}
                   target="_blank"
                   rel="noreferrer"
+                  className="projects-carousel-link"
                 >
                   GitHub
                 </a>
@@ -97,6 +121,7 @@ function ProjectsCarousel() {
                   href={currentProject.demo_url}
                   target="_blank"
                   rel="noreferrer"
+                  className="projects-carousel-link"
                 >
                   Voir le projet
                 </a>
@@ -106,24 +131,52 @@ function ProjectsCarousel() {
         </article>
 
         <button
-          className="carousel-btn"
+          className="projects-carousel-btn projects-carousel-btn-next"
           onClick={nextSlide}
           aria-label="Projet suivant"
+          type="button"
         >
           ›
         </button>
       </div>
 
-      <div className="carousel-dots">
+      <div className="projects-carousel-dots">
         {projects.map((project, index) => (
           <button
             key={project.id}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
+            className={`projects-carousel-dot ${
+              index === currentIndex ? "active" : ""
+            }`}
             onClick={() => setCurrentIndex(index)}
             aria-label={`Voir ${project.title}`}
+            type="button"
           />
         ))}
       </div>
+
+      {selectedImage && (
+        <div className="projects-image-modal" onClick={closeImageModal}>
+          <div
+            className="projects-image-modal-content"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              className="projects-image-modal-close"
+              type="button"
+              onClick={closeImageModal}
+              aria-label="Fermer l’image agrandie"
+            >
+              ×
+            </button>
+
+            <img
+              src={selectedImage.src}
+              alt={`Aperçu agrandi du projet ${selectedImage.alt}`}
+              className="projects-image-modal-img"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

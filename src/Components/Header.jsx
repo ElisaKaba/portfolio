@@ -56,7 +56,10 @@ const Header = () => {
                   Mon portfolio
                 </li>
               </NavLink>
-              <NavLink className="contact" to="/contact">
+                <li className="propositions" onClick={handleShowList}> 
+                 <NavLink  className="services" to="/services"> Services  </NavLink>
+               </li>
+              <NavLink>
                 <li className="contact" onClick={handleShowList}>
                   Contactez-moi
                 </li>
@@ -87,6 +90,9 @@ const Header = () => {
             <NavLink className="projets" to="/projets">
               <li className="portfolio">Mon portfolio</li>
             </NavLink>
+              <li className="propositions" onClick={handleShowList}> 
+                 <NavLink  className="services" to="/services"> Services  </NavLink>
+               </li>
             <NavLink className="contact" to="/contact">
               <li className="contact">Contactez-moi</li>
             </NavLink>

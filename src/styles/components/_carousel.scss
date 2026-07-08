@@ -1,7 +1,7 @@
 .carousel-section {
   padding: 80px 20px;
-  background: #fdfaf4;
-  color: #222;
+  background: #ffffff;
+  color: #5c413c;
 }
 
 .projects-section {
@@ -15,7 +15,7 @@
 
 .carousel-subtitle {
   margin: 0 0 8px;
-  color: #d65a8a;
+  color: #983122;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -25,7 +25,7 @@
 .carousel-header h2 {
   margin: 0;
   font-size: clamp(2rem, 4vw, 3rem);
-  color: #1f3d2b;
+  color: #5c413c;
 }
 
 .carousel-wrapper {
@@ -43,14 +43,14 @@
   background: #ffffff;
   border-radius: 28px;
   padding: 36px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(31, 61, 43, 0.08);
+  box-shadow: 0 20px 50px rgba(92, 65, 60, 0.12);
+  border: 1px solid rgba(92, 65, 60, 0.15);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .carousel-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 28px 70px rgba(152, 49, 34, 0.16);
 }
 
 .carousel-btn {
@@ -58,9 +58,9 @@
   height: 54px;
   border: none;
   border-radius: 50%;
-  background: #f3c548;
-  color: #1f3d2b;
-  font-size: 2.4rem;
+  background: #983122;
+  color: #ffffff;
+  font-size: 25px;
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -69,16 +69,17 @@
 }
 
 .carousel-btn:hover {
-  background: #1f3d2b;
+  background: #5c413c;
   color: #ffffff;
 }
 
 .card-icon {
-  width: 64px;
+  width: fit-content;
+  padding: 5px;
   height: 64px;
   border-radius: 20px;
-  background: #f3c548;
-  color: #1f3d2b;
+  background: #983122;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +90,7 @@
 
 .card-category {
   margin: 0 0 8px;
-  color: #d65a8a;
+  color: #983122;
   font-weight: 700;
   font-size: 0.9rem;
 }
@@ -97,14 +98,14 @@
 .carousel-card h3 {
   margin: 0 0 16px;
   font-size: 2rem;
-  color: #1f3d2b;
+  color: #5c413c;
 }
 
 .card-description {
   margin: 0;
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #444;
+  color: #5c413c;
 }
 
 .level-wrapper {
@@ -115,20 +116,20 @@
   display: block;
   margin-bottom: 8px;
   font-weight: 700;
-  color: #1f3d2b;
+  color: #5c413c;
 }
 
 .level-bar {
   width: 100%;
   height: 10px;
-  background: #eeeeee;
+  background: rgba(92, 65, 60, 0.15);
   border-radius: 999px;
   overflow: hidden;
 }
 
 .level-fill {
   height: 100%;
-  background: #d65a8a;
+  background: #983122;
   border-radius: 999px;
 }
 
@@ -144,14 +145,18 @@
   height: 11px;
   border: none;
   border-radius: 50%;
-  background: #d8d8d8;
+  background: rgba(92, 65, 60, 0.25);
   cursor: pointer;
 }
 
 .dot.active {
-  background: #d65a8a;
+  background: #983122;
   transform: scale(1.25);
 }
+
+/* =========================
+   PROJETS
+========================= */
 
 .project-card {
   padding: 0;
@@ -172,7 +177,7 @@
 .project-long-description {
   margin-top: 14px;
   line-height: 1.7;
-  color: #555;
+  color: #5c413c;
 }
 
 .tech-list {
@@ -185,10 +190,11 @@
 .tech-pill {
   padding: 8px 14px;
   border-radius: 999px;
-  background: #e8f1eb;
-  color: #1f3d2b;
+  background: rgba(152, 49, 34, 0.1);
+  color: #983122;
   font-size: 0.9rem;
   font-weight: 700;
+  border: 1px solid rgba(152, 49, 34, 0.18);
 }
 
 .project-links {
@@ -202,14 +208,18 @@
   text-decoration: none;
   padding: 12px 18px;
   border-radius: 999px;
-  background: #1f3d2b;
+  background: #983122;
   color: #ffffff;
   font-weight: 700;
 }
 
 .project-links a:hover {
-  background: #d65a8a;
+  background: #5c413c;
 }
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 768px) {
   .carousel-section {

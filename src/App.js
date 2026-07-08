@@ -8,6 +8,7 @@ import QuiSuiJe from "./pages/quiSuiJe";
 import Competences from "./pages/competences";
 import ContactForm from "./pages/contactForm";
 import Projets from "./pages/projets";
+import Services from "./pages/services"
 
 function App() {
   return (
@@ -16,10 +17,11 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/quiSuiJe" element={<NotFound />} />
+          <Route exact path="/quiSuiJe" element={<QuiSuiJe />} />
           <Route exact path="/competences" element={<Competences />} />
           <Route exact path="/projets" element={<Projets />} />
-          <Route exact path="/contact" element={<NotFound />} />
+          <Route exact path="/services" element={<Services />}/>
+          <Route exact path="/contact" element={<ContactForm />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
