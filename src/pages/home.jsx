@@ -5,7 +5,7 @@ const Home = () =>  {
     <section className="home">
       <section className="background">
         <div className="presentationEtContact">
-          <h1 className="nom">Elisa Kaba</h1>
+          <h1 className="nom">Elisa Kaba Développeuse frontend React & UX/UI</h1>
           <h2 className="titre">Conceptrice développeuse d'applications</h2>
                     <h3 className="recherche">
                         Formation fullstack JAVA ANGULAR REACT<br/>
