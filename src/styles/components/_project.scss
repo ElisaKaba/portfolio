@@ -77,11 +77,11 @@
 }
 
 .projects-carousel-btn-prev {
-  left: 20px;
+  left: -35px;
 }
 
 .projects-carousel-btn-next {
-  right: 20px;
+  right: -35px;
 }
 
 .projects-carousel-btn:hover {
@@ -100,7 +100,7 @@
 
 .projects-carousel-card {
   width: min(100%, 720px);
-  height: 680px;
+  height: 500px;
   background: #ffffff;
   border-radius: 28px;
   padding: 34px;

@@ -1,8 +1,20 @@
+/* =========================
+   PAGE QUI SUIS-JE
+   Palette :
+   #983122 - accent rouge
+   #5c413c - brun texte
+   #ffffff - fond carte
+========================= */
+
 .qui-suis-je-page {
   min-height: 100vh;
-  background: #fdfaf4;
-  color: #222;
+  background: #faf7f2;
+  color: #5c413c;
 }
+
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
 
 .PhotoEtPrez {
   max-width: 1180px;
@@ -14,9 +26,15 @@
   align-items: start;
 }
 
+/* =========================
+   PHOTO
+========================= */
+
 .photo-wrapper {
   position: sticky;
   top: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .photoElisa {
@@ -25,16 +43,20 @@
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 32px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.12);
   border: 8px solid #ffffff;
+  box-shadow: 0 24px 70px rgba(92, 65, 60, 0.16);
 }
+
+/* =========================
+   CARTE PRÉSENTATION
+========================= */
 
 .presentation {
   background: #ffffff;
   border-radius: 32px;
   padding: 48px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(31, 61, 43, 0.08);
+  box-shadow: 0 24px 70px rgba(92, 65, 60, 0.12);
+  border: 1px solid rgba(92, 65, 60, 0.12);
 }
 
 .intro-label {
@@ -54,6 +76,10 @@
   line-height: 1.1;
 }
 
+/* =========================
+   TEXTE
+========================= */
+
 .textDePresentation {
   display: flex;
   flex-direction: column;
@@ -62,99 +88,144 @@
 
 .textDePresentation p {
   margin: 0;
-  color: #444;
+  color: #5c413c;
   font-size: 1.04rem;
   line-height: 1.85;
 }
 
-.presentation-actions {
+/* =========================
+   BOUTONS
+========================= */
+
+.qui-suis-je-actions {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
   margin-top: 36px;
-}
-
-.contacter,
-.CV {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 12px 20px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 800;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.contacter {
-  background: #5c413c;
-  color: #ffffff;
+.qui-suis-je-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: auto !important;
+  min-width: 190px !important;
+  min-height: 50px !important;
+
+  padding: 12px 22px !important;
+  border-radius: 999px !important;
+
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
+  text-indent: 0 !important;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.CV {
-  background: #983122;
-  color: #ffffff;
+.qui-suis-je-btn-contact {
+  background: #5c413c !important;
+  color: #ffffff !important;
+  border: 2px solid #5c413c !important;
 }
 
-.contacter:hover,
-.CV:hover {
+.qui-suis-je-btn-contact:hover {
+  background: #983122 !important;
+  border-color: #983122 !important;
+  color: #ffffff !important;
   transform: translateY(-2px);
 }
 
-.contacter:hover {
-  background:#983122;
-  color: #ffffff;
+.qui-suis-je-btn-cv {
+  background: #983122 !important;
+  color: #ffffff !important;
+  border: 2px solid #983122 !important;
 }
 
-.CV:hover {
-  background: #5c413c;
-  color: #ffffff;
+.qui-suis-je-btn-cv:hover {
+  background: #5c413c !important;
+  border-color: #5c413c !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
 }
+
+.qui-suis-je-btn:focus-visible {
+  outline: 3px solid rgba(152, 49, 34, 0.35);
+  outline-offset: 4px;
+}
+
+/* =========================
+   RESPONSIVE TABLETTE
+========================= */
 
 @media (max-width: 900px) {
   .PhotoEtPrez {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
     padding: 64px 20px;
   }
 
   .photo-wrapper {
     position: static;
-    display: flex;
-    justify-content: center;
   }
 
   .photoElisa {
-    max-width: 280px;
+    max-width: 300px;
   }
 
   .presentation {
-    padding: 32px;
+    padding: 36px;
+  }
+
+  .presentation h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
   }
 }
 
-@media (max-width: 520px) {
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 600px) {
   .PhotoEtPrez {
     padding: 48px 16px;
   }
 
+  .photoElisa {
+    max-width: 260px;
+    border-radius: 26px;
+  }
+
   .presentation {
-    padding: 26px;
+    padding: 28px;
     border-radius: 24px;
-  }
-
-  .presentation-actions {
-    flex-direction: column;
-  }
-
-  .contacter,
-  .CV {
-    width: 100%;
   }
 
   .textDePresentation p {
     font-size: 1rem;
     line-height: 1.75;
+  }
+
+  .qui-suis-je-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .qui-suis-je-btn {
+    width: 100% !important;
+    min-width: 0 !important;
   }
 }

@@ -30,10 +30,11 @@ const QuiSuisJe = () => {
             </p>
 
             <p>
-              En 2021, j’ai choisi de faire de mon intérêt pour l’informatique
-              un métier. J’ai d’abord suivi une formation de développeuse
+              Passionnée d'informatique depuis plus de 25 ans, j'ai saisi l'oportunité d'en faire
+              un métier en 2021.
+              J’ai d’abord suivi une formation de développeuse
               frontend chez OpenClassrooms, puis j’ai complété mon parcours avec
-              une formation de développeuse d’applications, me permettant de
+              une formation de développeuse d’applications chez Simplon Euskadi, me permettant ainsi de
               travailler avec des technologies comme React, Angular, JavaScript,
               Java et les bases de données.
             </p>
@@ -62,12 +63,16 @@ const QuiSuisJe = () => {
             </p>
           </div>
 
-          <div className="presentation-actions">
-            <NavLink className="contacter" to="/contact">
+          <div className="qui-suis-je-actions">
+            <NavLink className="qui-suis-je-btn qui-suis-je-btn-contact" to="/contact">
               Échanger autour de votre projet
             </NavLink>
 
-            <a className="CV" href="/cvElisa.pdf" download="CV_ElisaKaba.pdf">
+            <a
+              className="qui-suis-je-btn qui-suis-je-btn-cv"
+              href="/CV_Elisa_Kaba.pdf"
+              download="CV_Elisa_Kaba.pdf"
+            >
               Télécharger mon CV
             </a>
           </div>

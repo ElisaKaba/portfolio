@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { getSkills } from '../services/skillsService';
+import { useEffect, useState } from "react";
+import { getSkills } from "../services/skillsService";
 
 
 function SkillsCarousel() {
@@ -34,34 +34,42 @@ function SkillsCarousel() {
   const currentSkill = skills[currentIndex];
 
   return (
-    <section className="carousel-section">
-      <div className="carousel-header">
-        <p className="carousel-subtitle">Ce que je sais faire</p>
+    <section className="skills-carousel-section">
+      <div className="skills-carousel-header">
+        <p className="skills-carousel-subtitle">Ce que je sais faire</p>
         <h2>Mes compétences</h2>
       </div>
 
-      <div className="carousel-wrapper">
+      <div className="skills-carousel-stage">
         <button
-          className="carousel-btn"
+          className="skills-carousel-btn skills-carousel-btn-prev"
           onClick={prevSlide}
           aria-label="Compétence précédente"
+          type="button"
         >
           ‹
         </button>
 
-        <article className="carousel-card skill-card">
-          <div className="card-icon">{currentSkill.icon || '✦'}</div>
+        <article className="skills-carousel-card">
+          <div className="skills-carousel-icon">
+            {currentSkill.icon || "✦"}
+          </div>
 
-          <p className="card-category">{currentSkill.category}</p>
+          <p className="skills-carousel-category">{currentSkill.category}</p>
+
           <h3>{currentSkill.name}</h3>
-          <p className="card-description">{currentSkill.description}</p>
+
+          <p className="skills-carousel-description">
+            {currentSkill.description}
+          </p>
 
           {currentSkill.level && (
-            <div className="level-wrapper">
+            <div className="skills-carousel-level-wrapper">
               <span>Niveau</span>
-              <div className="level-bar">
+
+              <div className="skills-carousel-level-bar">
                 <div
-                  className="level-fill"
+                  className="skills-carousel-level-fill"
                   style={{ width: `${currentSkill.level * 20}%` }}
                 />
               </div>
@@ -70,21 +78,25 @@ function SkillsCarousel() {
         </article>
 
         <button
-          className="carousel-btn"
+          className="skills-carousel-btn skills-carousel-btn-next"
           onClick={nextSlide}
           aria-label="Compétence suivante"
+          type="button"
         >
           ›
         </button>
       </div>
 
-      <div className="carousel-dots">
+      <div className="skills-carousel-dots">
         {skills.map((skill, index) => (
           <button
             key={skill.id}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
+            className={`skills-carousel-dot ${
+              index === currentIndex ? "active" : ""
+            }`}
             onClick={() => setCurrentIndex(index)}
             aria-label={`Voir ${skill.name}`}
+            type="button"
           />
         ))}
       </div>

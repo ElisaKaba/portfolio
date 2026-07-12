@@ -4,7 +4,7 @@ import Header from "./Components/Header";
 import Home from "./pages/home";
 import NotFound from "./pages/notFound";
 import Footer from "./Components/Footer";
-import QuiSuiJe from "./pages/quiSuiJe";
+import QuiSuiJe from "./pages/quiSuisJe";
 import Competences from "./pages/competences";
 import ContactForm from "./pages/contactForm";
 import Projets from "./pages/projets";
@@ -17,7 +17,7 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/quiSuiJe" element={<QuiSuiJe />} />
+          <Route exact path="/quisuisJe" element={<QuiSuisJe />} />
           <Route exact path="/competences" element={<Competences />} />
           <Route exact path="/projets" element={<Projets />} />
           <Route exact path="/services" element={<Services />}/>
