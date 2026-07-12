@@ -90,7 +90,8 @@ function Contact() {
     <main className="contact-page">
       <section className="contact-card">
         <p className="contact-label">Contact</p>
-        <h1>Parlons de votre projet</h1>
+        <h1>Me contacter</h1>
+        <p>Parlons de votre projet</p>
 
         <p className="contact-intro">
           Vous avez besoin d’un site vitrine, d’une refonte, d’une interface web

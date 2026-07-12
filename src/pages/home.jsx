@@ -1,15 +1,21 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-const Home = () =>  {
+const Home = () => {
   return (
     <section className="home">
       <section className="background">
         <div className="presentationEtContact">
-          <h1 className="nom">Elisa Kaba Développeuse frontend React & UX/UI</h1>
+          <h1 className="nom">
+            Elisa Kaba <br />
+            Développeuse frontend React & UX/UI
+          </h1>
           <h2 className="titre">Conceptrice développeuse d'applications</h2>
-                    <h3 className="recherche">
-                        Formation fullstack JAVA ANGULAR REACT<br/>
-                        Plus sensible au frontend avec un intérêt particulier pour les question d'UX-UI</h3>
+          <h3 className="recherche">
+            Formation fullstack JAVA ANGULAR REACT
+            <br />
+            Plus sensible au frontend avec un intérêt particulier pour les question
+            d'UX-UI
+          </h3>
           <NavLink className="contactSend" to="/contact">
             <div className="enveloppe">
               <img
@@ -21,11 +27,7 @@ const Home = () =>  {
           </NavLink>
         </div>
         <div className="imgFond">
-          <img
-            src="../../../../img/homeBack.jpg"
-            alt="Océan"
-            className="backgroundImg"
-          />
+          <img src="../../../../img/homeBack.jpg" alt="Océan" className="backgroundImg" />
         </div>
       </section>
     </section>

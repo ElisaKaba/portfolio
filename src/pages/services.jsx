@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-
 const services = [
   {
     title: "Site vitrine",
@@ -51,13 +50,12 @@ const Services = () => {
   return (
     <main className="services-page">
       <section className="services-hero">
-        <p className="services-label">Services</p>
-        <h1>Ce que je propose</h1>
+        <p className="services-label">Ce que je propose</p>
+        <h1>Création de sites web et interfaces frontend</h1>
         <p className="services-intro">
-          J’accompagne les personnes, associations et petites structures dans la
-          création ou la refonte de leur présence en ligne, avec une attention
-          particulière portée à la clarté, à l’accessibilité et à l’expérience
-          utilisateur.
+          J’accompagne les personnes, associations et petites structures dans la création
+          ou la refonte de leur présence en ligne, avec une attention particulière portée
+          à la clarté, à l’accessibilité et à l’expérience utilisateur.
         </p>
       </section>
 
@@ -83,9 +81,9 @@ const Services = () => {
       <section className="services-note">
         <h2>Une approche progressive</h2>
         <p>
-          Chaque projet peut évoluer par étapes. Il est possible de commencer par
-          un site vitrine simple, puis d’ajouter ensuite une partie administrable,
-          des contenus dynamiques ou des fonctionnalités plus spécifiques.
+          Chaque projet peut évoluer par étapes. Il est possible de commencer par un site
+          vitrine simple, puis d’ajouter ensuite une partie administrable, des contenus
+          dynamiques ou des fonctionnalités plus spécifiques.
         </p>
 
         <NavLink className="services-contact-btn" to="/contact">

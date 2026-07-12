@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProjects } from "../services/projectsService";
-
+import { NavLink } from "react-router-dom";
 
 function ProjectsCarousel() {
   const [projects, setProjects] = useState([]);
@@ -42,7 +42,12 @@ function ProjectsCarousel() {
     <section className="projects-carousel-section">
       <div className="projects-carousel-header">
         <p className="projects-carousel-subtitle">Ce que j’ai réalisé</p>
-        <h2>Mes projets</h2>
+        <h1>Mes projets web</h1>
+        <p>Découvrez quelques projets réalisés en React, JavaScript, HTML/CSS et SCSS</p>
+        <p>
+          Sites vitrines, applications frontend, interfaces dynamiques et projets de
+          formation.
+        </p>
       </div>
 
       <div className="projects-carousel-wrapper">
@@ -73,14 +78,14 @@ function ProjectsCarousel() {
                 src={currentProject.image_url}
                 alt={`Aperçu du projet ${currentProject.title}`}
               />
-              <span className="projects-carousel-thumbnail-label">
-                Agrandir
-              </span>
+              <span className="projects-carousel-thumbnail-label">Agrandir</span>
             </button>
           )}
 
           <div className="projects-carousel-content">
-            <p className="projects-carousel-category">Projet</p>
+            <p className="projects-carousel-category">
+              {currentProject.category || "Projet"}
+            </p>
 
             <h3>{currentProject.title}</h3>
 
@@ -126,6 +131,11 @@ function ProjectsCarousel() {
                   Voir le projet
                 </a>
               )}
+              {currentProject.slug === "portfolio-elisa-kaba" && (
+                <NavLink to="/services" className="projects-carousel-link">
+                  Voir mes services
+                </NavLink>
+              )}
             </div>
           </div>
         </article>
@@ -144,9 +154,7 @@ function ProjectsCarousel() {
         {projects.map((project, index) => (
           <button
             key={project.id}
-            className={`projects-carousel-dot ${
-              index === currentIndex ? "active" : ""
-            }`}
+            className={`projects-carousel-dot ${index === currentIndex ? "active" : ""}`}
             onClick={() => setCurrentIndex(index)}
             aria-label={`Voir ${project.title}`}
             type="button"

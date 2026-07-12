@@ -73,7 +73,9 @@
   justify-content: center;
   flex-shrink: 0;
   z-index: 5;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .projects-carousel-btn-prev {
@@ -134,7 +136,9 @@
   box-shadow: 0 12px 30px rgba(92, 65, 60, 0.14);
   cursor: zoom-in;
   flex-shrink: 0;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .projects-carousel-thumbnail-button:hover {
@@ -153,7 +157,9 @@
   object-fit: cover;
   object-position: top center;
   display: block;
-  transition: transform 0.25s ease, filter 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
 }
 
 .projects-carousel-thumbnail-button:hover .projects-carousel-thumbnail {
@@ -324,7 +330,9 @@
   border-radius: 50%;
   background: rgba(92, 65, 60, 0.25);
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .projects-carousel-dot:hover {

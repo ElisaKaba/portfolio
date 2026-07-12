@@ -1,10 +1,8 @@
 import React from "react";
-import SkillsCarousel from '../Components/SkillsCarousel'
+import SkillsCarousel from "../Components/SkillsCarousel";
 
 const Competences = () => {
-  return (
- <SkillsCarousel/>
-  );
+  return <SkillsCarousel />;
 };
 
 export default Competences;

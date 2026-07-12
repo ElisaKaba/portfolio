@@ -36,34 +36,36 @@ const Header = () => {
 
           <aside className={` ${showNav ? "showLinks" : "hideLinks"}`}>
             <ul id="hiddenMenu">
-              <NavLink className="accueilNavItem" to="/">
-                <li className="accueil" onClick={handleShowList}>
+              <li className="accueil" onClick={handleShowList}>
+                <NavLink className="accueilNavItem" to="/">
                   Accueil
-                </li>
-              </NavLink>
-              <NavLink className="quiNavItem" to="/quiSuiJe">
-                <li className="qui" onClick={handleShowList}>
+                </NavLink>
+              </li>
+              <li className="qui" onClick={handleShowList}>
+                <NavLink className="quiNavItem" to="/quisuisje">
                   Qui suis-je ?
-                </li>
-              </NavLink>
-              <NavLink className="competencesNavItem" to="/competences">
-                <li className="competences" onClick={handleShowList}>
+                </NavLink>
+              </li>
+              <li className="competences" onClick={handleShowList}>
+                <NavLink className="competencesNavItem" to="/competences">
                   Mes compétences
-                </li>
-              </NavLink>
-              <NavLink className="projets" to="/projets">
-                <li className="portfolio" onClick={handleShowList}>
+                </NavLink>
+              </li>
+              <li className="portfolio" onClick={handleShowList}>
+                <NavLink className="projets" to="/projets">
                   Mon portfolio
-                </li>
-              </NavLink>
-                <li className="propositions" onClick={handleShowList}> 
-                 <NavLink  className="services" to="/services"> Services  </NavLink>
-               </li>
-              <NavLink>
-                <li className="contact" onClick={handleShowList}>
+                </NavLink>
+              </li>
+              <li className="propositions" onClick={handleShowList}>
+                <NavLink className="services" to="/services">
+                  Services
+                </NavLink>
+              </li>
+              <li className="contact" onClick={handleShowList}>
+                <NavLink className="contact" to="/contact">
                   Contactez-moi
-                </li>
-              </NavLink>
+                </NavLink>
+              </li>
             </ul>
           </aside>
         </div>
@@ -79,23 +81,37 @@ const Header = () => {
         </NavLink>
         <nav className="menu">
           <ul>
-            <NavLink className="quiNavItem" to="/quiSuiJe">
-              {" "}
-              <li className="qui">Qui suis-je ?</li>
-            </NavLink>
-            <NavLink className="competencesNavItem" to="/competences">
-              <li className="competences">Mes compétences</li>
-            </NavLink>
-
-            <NavLink className="projets" to="/projets">
-              <li className="portfolio">Mon portfolio</li>
-            </NavLink>
-              <li className="propositions" onClick={handleShowList}> 
-                 <NavLink  className="services" to="/services"> Services  </NavLink>
-               </li>
-            <NavLink className="contact" to="/contact">
-              <li className="contact">Contactez-moi</li>
-            </NavLink>
+            {" "}
+            <li className="qui" onClick={handleShowList}>
+              <NavLink className="qui" to="/quisuisje">
+                {" "}
+                Qui suis-je?
+              </NavLink>
+            </li>{" "}
+            <li className="competences" onClick={handleShowList}>
+              <NavLink className="competences" to="/competences">
+                {" "}
+                Mes compétences
+              </NavLink>
+            </li>
+            <li className="portfolio" onClick={handleShowList}>
+              <NavLink className="projets" to="/projets">
+                {" "}
+                Mes réalisations
+              </NavLink>
+            </li>
+            <li className="propositions" onClick={handleShowList}>
+              <NavLink className="services" to="/services">
+                {" "}
+                Services{" "}
+              </NavLink>
+            </li>
+            <li className="contact" onClick={handleShowList}>
+              <NavLink className="contact" to="/contact">
+                {" "}
+                Contactez-moi
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>

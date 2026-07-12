@@ -43,7 +43,7 @@
 ========================= */
 
 .skills-carousel-stage {
-    position: relative;
+  position: relative;
   width: min(100%, 720px);
   margin: 0 auto;
   overflow: visible;
@@ -97,7 +97,9 @@
 
   z-index: 5;
 
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .skills-carousel-btn-prev {
@@ -126,7 +128,7 @@
   width: fit-content;
   height: 64px;
   margin-bottom: 22px;
-padding: 10px;
+  padding: 10px;
   border-radius: 18px;
   background: #983122;
   color: #ffffff;
@@ -213,7 +215,9 @@ padding: 10px;
   border-radius: 50%;
   background: rgba(92, 65, 60, 0.25);
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .skills-carousel-dot:hover {
