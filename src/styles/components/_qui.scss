@@ -1,7 +1,7 @@
 /* =========================
    PAGE QUI SUIS-JE
    Palette :
-   #983122 - accent rouge
+   #983122 - accent
    #5c413c - brun texte
    #ffffff - fond carte
 ========================= */
@@ -13,15 +13,16 @@
 }
 
 /* =========================
-   LAYOUT PRINCIPAL
+   LAYOUT
 ========================= */
 
-.PhotoEtPrez {
+.qui-suis-je-layout {
   max-width: 1180px;
   margin: 0 auto;
   padding: 90px 24px;
+
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 360px minmax(0, 1fr);
   gap: 64px;
   align-items: start;
 }
@@ -30,169 +31,179 @@
    PHOTO
 ========================= */
 
-.photo-wrapper {
+.qui-suis-je-photo-wrapper {
   position: sticky;
   top: 40px;
+
   display: flex;
   justify-content: center;
 }
 
-.photoElisa {
+.qui-suis-je-photo {
   width: 100%;
   max-width: 360px;
   aspect-ratio: 4 / 5;
+
   object-fit: cover;
+  object-position: center;
+
   border-radius: 32px;
   border: 8px solid #ffffff;
+
   box-shadow: 0 24px 70px rgba(92, 65, 60, 0.16);
 }
 
 /* =========================
-   CARTE PRÉSENTATION
+   CARD
 ========================= */
 
-.presentation {
+.qui-suis-je-card {
   background: #ffffff;
   border-radius: 32px;
   padding: 48px;
-  box-shadow: 0 24px 70px rgba(92, 65, 60, 0.12);
+
   border: 1px solid rgba(92, 65, 60, 0.12);
+  box-shadow: 0 24px 70px rgba(92, 65, 60, 0.12);
 }
 
-.intro-label {
+.qui-suis-je-label {
   margin: 0 0 12px;
+
   color: #983122;
+
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
 
-.presentation h1 {
-  margin: 0 0 32px;
+.qui-suis-je-card h1 {
   max-width: 760px;
+  margin: 0 0 32px;
+
   color: #5c413c;
+
   font-size: clamp(2rem, 4vw, 3.4rem);
   line-height: 1.1;
 }
 
 /* =========================
-   TEXTE
+   TEXT
 ========================= */
 
-.textDePresentation {
+.qui-suis-je-text {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.textDePresentation p {
+.qui-suis-je-text p {
   margin: 0;
+
   color: #5c413c;
+
   font-size: 1.04rem;
   line-height: 1.85;
 }
 
 /* =========================
-   BOUTONS
+   BUTTONS
 ========================= */
 
 .qui-suis-je-actions {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-top: 36px;
   align-items: center;
+  margin-top: 36px;
 }
 
-.qui-suis-je-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+.qui-suis-je-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  width: auto !important;
-  min-width: 190px !important;
-  min-height: 50px !important;
+  box-sizing: border-box;
 
-  padding: 12px 22px !important;
-  border-radius: 999px !important;
+  width: auto;
+  max-width: 100%;
+  min-height: 48px;
 
-  font-size: 1rem !important;
-  font-weight: 800 !important;
-  line-height: 1.2 !important;
-  text-align: center !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
+  padding: 12px 20px;
+  border-radius: 999px;
 
-  opacity: 1 !important;
-  visibility: visible !important;
-  overflow: visible !important;
-  text-indent: 0 !important;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
 
   cursor: pointer;
 
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
+  opacity: 1;
+  visibility: visible;
+  overflow: visible;
+
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
     transform 0.2s ease;
 }
 
-.qui-suis-je-btn-contact {
-  background: #5c413c !important;
-  color: #ffffff !important;
-  border: 2px solid #5c413c !important;
+.qui-suis-je-button-contact {
+  background: #5c413c;
+  color: #ffffff;
+  border: 2px solid #5c413c;
 }
 
-.qui-suis-je-btn-contact:hover {
-  background: #983122 !important;
-  border-color: #983122 !important;
-  color: #ffffff !important;
+.qui-suis-je-button-contact:hover {
+  background: #983122;
+  border-color: #983122;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
-.qui-suis-je-btn-cv {
-  background: #983122 !important;
-  color: #ffffff !important;
-  border: 2px solid #983122 !important;
+.qui-suis-je-button-cv {
+  background: #983122;
+  color: #ffffff;
+  border: 2px solid #983122;
 }
 
-.qui-suis-je-btn-cv:hover {
-  background: #5c413c !important;
-  border-color: #5c413c !important;
-  color: #ffffff !important;
+.qui-suis-je-button-cv:hover {
+  background: #5c413c;
+  border-color: #5c413c;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
-.qui-suis-je-btn:focus-visible {
+.qui-suis-je-button:focus-visible {
   outline: 3px solid rgba(152, 49, 34, 0.35);
   outline-offset: 4px;
 }
 
 /* =========================
-   RESPONSIVE TABLETTE
+   RESPONSIVE TABLET
 ========================= */
 
 @media (max-width: 900px) {
-  .PhotoEtPrez {
+  .qui-suis-je-layout {
     grid-template-columns: 1fr;
     gap: 36px;
     padding: 64px 20px;
   }
 
-  .photo-wrapper {
+  .qui-suis-je-photo-wrapper {
     position: static;
   }
 
-  .photoElisa {
+  .qui-suis-je-photo {
     max-width: 300px;
   }
 
-  .presentation {
+  .qui-suis-je-card {
     padding: 36px;
   }
 
-  .presentation h1 {
+  .qui-suis-je-card h1 {
     font-size: clamp(2rem, 6vw, 3rem);
   }
 }
@@ -202,21 +213,25 @@
 ========================= */
 
 @media (max-width: 600px) {
-  .PhotoEtPrez {
+  .qui-suis-je-layout {
     padding: 48px 16px;
   }
 
-  .photoElisa {
+  .qui-suis-je-photo {
     max-width: 260px;
     border-radius: 26px;
   }
 
-  .presentation {
+  .qui-suis-je-card {
     padding: 28px;
     border-radius: 24px;
   }
 
-  .textDePresentation p {
+  .qui-suis-je-card h1 {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .qui-suis-je-text p {
     font-size: 1rem;
     line-height: 1.75;
   }
@@ -225,10 +240,21 @@
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
+    margin-top: 28px;
+    width: 100%;
   }
 
-  .qui-suis-je-btn {
-    width: 100% !important;
-    min-width: 0 !important;
+  .qui-suis-je-button {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+
+    min-height: 44px;
+    padding: 10px 14px;
+
+    font-size: 0.92rem;
+    line-height: 1.25;
+
+    white-space: normal;
   }
 }

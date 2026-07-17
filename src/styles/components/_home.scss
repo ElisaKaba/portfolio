@@ -1,69 +1,325 @@
+/* =========================
+   HOME
+   Palette :
+   #983122 - accent
+   #5c413c - brun texte
+   #ffffff - fond
+========================= */
+
 .home {
-  height: 86vh;
-  .background {
-    background-color: #983122;
-    height: 86vh;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #5c413c;
+}
+
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+
+.home-background {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  max-width: 1180px;
+  margin: 0 auto;
+
+  padding: 120px 24px 80px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 440px;
+  gap: 56px;
+  align-items: center;
+}
+
+/* =========================
+   TEXTE
+========================= */
+
+.presentationEtContact {
+  position: relative;
+  z-index: 2;
+}
+
+.home-label {
+  margin: 0 0 14px;
+
+  color: #983122;
+
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.nom-statut {
+  margin: 0;
+
+  color: #5c413c;
+
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+.nom-statut span {
+  display: block;
+  margin-top: 16px;
+
+  max-width: 760px;
+
+  color: #983122;
+
+  font-size: clamp(1.45rem, 3vw, 2.45rem);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.recherche {
+  margin: 28px 0 0;
+  max-width: 720px;
+
+  color: #5c413c;
+
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  line-height: 1.65;
+  font-weight: 700;
+}
+
+.recherche span {
+  display: block;
+  margin-top: 8px;
+
+  font-weight: 500;
+}
+
+/* =========================
+   BOUTON CONTACT
+========================= */
+
+.contactSend {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+
+  width: fit-content;
+  max-width: 100%;
+  min-height: 52px;
+
+  margin-top: 36px;
+  padding: 12px 20px 12px 24px;
+
+  border-radius: 999px;
+  border: 2px solid #983122;
+
+  background: #983122;
+  color: #ffffff !important;
+
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none !important;
+  white-space: nowrap;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contactSend:hover {
+  background: #5c413c;
+  border-color: #5c413c;
+  transform: translateY(-2px);
+}
+
+.enveloppe {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.send {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.imgFond {
+  position: relative;
+
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
+}
+
+.backgroundImg {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 34px;
+  border: 8px solid #ffffff;
+
+  box-shadow: 0 24px 70px rgba(92, 65, 60, 0.16);
+}
+
+/* =========================
+   TABLETTE / BURGER À 817px
+========================= */
+
+@media (max-width: 817px) {
+  .home-background {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+    gap: 42px;
+
+    padding: 110px 20px 64px;
+    align-items: start;
   }
-  .imgFond {
-    filter: opacity(0.6);
-    z-index: 1;
-    height: 100%;
-  }
-  .backgroundImg {
-    height: 86vh;
-    width: 100%;
-  }
+
   .presentationEtContact {
     text-align: center;
-    position: absolute;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
-    height: 40%;
-    width: 100%;
   }
-  .nom,
-  .titre {
-    font-size: 40px;
-    color: #fff;
-    margin: 0px;
+
+  .nom-statut {
+    font-size: clamp(2.3rem, 9vw, 4rem);
+    line-height: 1.08;
+  }
+
+  .nom-statut span {
+    margin: 16px auto 0;
+    font-size: clamp(1.25rem, 4.5vw, 2rem);
   }
 
   .recherche {
-    color: #fff;
-    margin: 20px;
-    margin-top: 45px;
-    line-height: 1.5;
-    margin-bottom: 0;
+    margin: 24px auto 0;
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
   }
+
+  .contactSend {
+    margin: 30px auto 0;
+  }
+
+  .imgFond {
+    justify-self: center;
+    max-width: 340px;
+  }
+
+  .backgroundImg {
+    aspect-ratio: 4 / 4.6;
+  }
+}
+
+/* =========================
+   MOBILE 390px
+========================= */
+
+@media (max-width: 520px) {
+  .home-background {
+    padding: 96px 16px 56px;
+    gap: 34px;
+  }
+
+  .home-label {
+    font-size: 0.78rem;
+  }
+
+  .nom-statut {
+    font-size: clamp(2rem, 11vw, 3.1rem);
+    line-height: 1.08;
+  }
+
+  .nom-statut span {
+    font-size: clamp(1.1rem, 5.4vw, 1.55rem);
+    line-height: 1.25;
+  }
+
+  .recherche {
+    margin-top: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .contactSend {
+    width: auto !important;
+    max-width: 190px;
+    min-height: 46px;
+
+    margin: 26px auto 0;
+    padding: 10px 16px;
+
+    gap: 10px !important;
+
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
   .enveloppe {
-    background-color: #fff;
-    border: #983122 solid 5px;
-    margin-top: 90px;
+    width: 30px;
+    height: 30px;
   }
+
   .send {
-    width: 96px;
-    height: 96px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .imgFond {
+    max-width: 280px;
+  }
+
+  .backgroundImg {
+    border-radius: 26px;
+    border-width: 6px;
   }
 }
-@media screen and (max-width: 576px) {
-  .home {
-    .nom,
-    .titre {
-      font-size: 20px;
-    }
+
+/* =========================
+   PETIT MOBILE
+========================= */
+
+@media (max-width: 360px) {
+  .home-background {
+    padding-top: 90px;
   }
-}
-@media screen and (min-width: 1200px) {
-  .home {
-    .nom,
-    .titre {
-      font-size: 64px;
-      color: #fff;
-      margin: 0px;
-    }
+
+  .nom-statut {
+    font-size: 1.9rem;
+  }
+
+  .nom-statut span {
+    font-size: 1.05rem;
+  }
+
+  .contactSend {
+    max-width: 170px;
+    font-size: 0.9rem;
+    padding: 9px 14px;
+  }
+
+  .enveloppe {
+    width: 28px;
+    height: 28px;
+  }
+
+  .send {
+    width: 15px;
+    height: 15px;
   }
 }

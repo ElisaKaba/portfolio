@@ -15,11 +15,37 @@ function SkillsCarousel() {
   }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === skills.length - 1 ? 0 : prevIndex + 1));
+    setCurrentIndex((previousIndex) =>
+      previousIndex === skills.length - 1 ? 0 : previousIndex + 1
+    );
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? skills.length - 1 : prevIndex - 1));
+    setCurrentIndex((previousIndex) =>
+      previousIndex === 0 ? skills.length - 1 : previousIndex - 1
+    );
+  };
+
+  const getSkillIconLabel = (icon, name) => {
+    const labels = {
+      react: "React",
+      javascript: "JavaScript",
+      "html-css": "HTML/CSS",
+      "ux-ui": "UX/UI",
+      responsive: "Responsive",
+      angular: "Angular",
+      java: "Java",
+      database: "Database",
+      supabase: "Supabase",
+      strapi: "Strapi",
+      github: "GitHub",
+      design: "Design",
+      analyse: "Analyse",
+      "project-management": "Projet",
+      "human-skills": "Humain",
+    };
+
+    return labels[icon] || name || "Compétence";
   };
 
   if (skills.length === 0) {
@@ -29,30 +55,31 @@ function SkillsCarousel() {
   const currentSkill = skills[currentIndex];
 
   return (
-    <section className="skills-carousel-section">
-      <div className="skills-carousel-header">
-        <p className="skills-carousel-subtitle">Ce que je sais faire</p>
-        <h1>Mes compétences</h1>
+    <section className="skills-carousel-section" id="competences">
+      <div className="skills-carousel-hero">
+        <p className="skills-carousel-hero-label">Ce que je sais faire</p>
+
+        <h2>Mes compétences</h2>
+
+        <p className="skills-carousel-hero-text">
+          Des compétences frontend, techniques et humaines au service d’interfaces
+          claires, accessibles et agréables à utiliser.
+        </p>
       </div>
 
-      <div className="skills-carousel-stage">
-        <button
-          className="skills-carousel-btn skills-carousel-btn-prev"
-          onClick={prevSlide}
-          aria-label="Compétence précédente"
-          type="button"
-        >
-          ‹
-        </button>
-
+      <div className="skills-carousel-wrapper">
         <article className="skills-carousel-card">
-          <div className="skills-carousel-icon">{currentSkill.icon || "✦"}</div>
+          <div className="skills-carousel-text-zone">
+            <div className="skills-carousel-icon">
+              {getSkillIconLabel(currentSkill.icon, currentSkill.name)}
+            </div>
 
-          <p className="skills-carousel-category">{currentSkill.category}</p>
+            <p className="skills-carousel-category">{currentSkill.category}</p>
 
-          <h3>{currentSkill.name}</h3>
+            <h3>{currentSkill.name}</h3>
 
-          <p className="skills-carousel-description">{currentSkill.description}</p>
+            <p className="skills-carousel-description">{currentSkill.description}</p>
+          </div>
 
           {currentSkill.level && (
             <div className="skills-carousel-level-wrapper">
@@ -68,14 +95,25 @@ function SkillsCarousel() {
           )}
         </article>
 
-        <button
-          className="skills-carousel-btn skills-carousel-btn-next"
-          onClick={nextSlide}
-          aria-label="Compétence suivante"
-          type="button"
-        >
-          ›
-        </button>
+        <div className="skills-carousel-arrows">
+          <button
+            className="skills-carousel-arrow skills-carousel-arrow-prev"
+            onClick={prevSlide}
+            aria-label="Compétence précédente"
+            type="button"
+          >
+            ‹
+          </button>
+
+          <button
+            className="skills-carousel-arrow skills-carousel-arrow-next"
+            onClick={nextSlide}
+            aria-label="Compétence suivante"
+            type="button"
+          >
+            ›
+          </button>
+        </div>
       </div>
 
       <div className="skills-carousel-dots">

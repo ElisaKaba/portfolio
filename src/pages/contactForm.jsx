@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvzjnbrz";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/TON_ID_FORMULAIRE";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -35,6 +35,7 @@ function Contact() {
       error: "",
     });
 
+    // Honeypot anti-spam : si rempli, on bloque sans alerter le bot
     if (formData.website) {
       setStatus({
         loading: false,
@@ -60,7 +61,7 @@ function Contact() {
       });
 
       if (!response.ok) {
-        throw new Error("Le message n’a pas pu être envoyé.");
+        throw new Error("Erreur lors de l’envoi du message.");
       }
 
       setFormData({
@@ -80,8 +81,7 @@ function Contact() {
       setStatus({
         loading: false,
         success: false,
-        error:
-          "Une erreur est survenue. Vous pouvez me contacter directement par email.",
+        error: "Une erreur est survenue. Vous pouvez me contacter directement par email.",
       });
     }
   };
@@ -90,16 +90,18 @@ function Contact() {
     <main className="contact-page">
       <section className="contact-card">
         <p className="contact-label">Contact</p>
+
         <h1>Me contacter</h1>
-        <p>Parlons de votre projet</p>
+
+        <p className="contact-title">Parlons de votre projet</p>
 
         <p className="contact-intro">
-          Vous avez besoin d’un site vitrine, d’une refonte, d’une interface web
-          ou simplement d’un échange autour de votre projet ? Écrivez-moi.
+          Vous avez besoin d’un site vitrine, d’une refonte, d’une interface web ou
+          simplement d’un échange autour de votre projet ? Écrivez-moi.
         </p>
 
         <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-field">
+          <div className="contact-form-field">
             <label htmlFor="name">Nom</label>
             <input
               id="name"
@@ -112,7 +114,7 @@ function Contact() {
             />
           </div>
 
-          <div className="form-field">
+          <div className="contact-form-field">
             <label htmlFor="email">Email</label>
             <input
               id="email"
@@ -125,7 +127,7 @@ function Contact() {
             />
           </div>
 
-          <div className="form-field">
+          <div className="contact-form-field">
             <label htmlFor="subject">Sujet</label>
             <input
               id="subject"
@@ -137,7 +139,7 @@ function Contact() {
             />
           </div>
 
-          <div className="form-field">
+          <div className="contact-form-field">
             <label htmlFor="message">Message</label>
             <textarea
               id="message"
@@ -149,7 +151,7 @@ function Contact() {
             />
           </div>
 
-          <div className="honeypot-field" aria-hidden="true">
+          <div className="contact-honeypot" aria-hidden="true">
             <label htmlFor="website">Site web</label>
             <input
               id="website"
@@ -162,18 +164,12 @@ function Contact() {
             />
           </div>
 
-          <button
-            className="contact-submit"
-            type="submit"
-            disabled={status.loading}
-          >
+          <button className="contact-submit" type="submit" disabled={status.loading}>
             {status.loading ? "Envoi en cours..." : "Envoyer le message"}
           </button>
 
           {status.success && (
-            <p className="contact-success">
-              Merci, votre message a bien été envoyé.
-            </p>
+            <p className="contact-success">Merci, votre message a bien été envoyé.</p>
           )}
 
           {status.error && <p className="contact-error">{status.error}</p>}
