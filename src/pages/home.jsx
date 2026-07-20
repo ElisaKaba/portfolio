@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 const Home = () => {
   return (
     <section className="home">
@@ -9,13 +10,16 @@ const Home = () => {
             Elisa Kaba <br />
             Développeuse frontend React & UX/UI
           </h1>
+
           <h2 className="titre">Conceptrice développeuse d'applications</h2>
+
           <h3 className="recherche">
             Formation fullstack JAVA ANGULAR REACT
             <br />
-            Plus sensible au frontend avec un intérêt particulier pour les question
+            Plus sensible au frontend avec un intérêt particulier pour les questions
             d'UX-UI
           </h3>
+
           <NavLink className="contactSend" to="/contact">
             <div className="enveloppe">
               <img
@@ -26,6 +30,7 @@ const Home = () => {
             </div>
           </NavLink>
         </div>
+
         <div className="imgFond">
           <img src="../../../../img/homeBack.jpg" alt="Océan" className="backgroundImg" />
         </div>
