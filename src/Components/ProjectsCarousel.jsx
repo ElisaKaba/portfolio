@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getProjects } from "../services/projectsService";
 import { NavLink } from "react-router-dom";
 
@@ -6,6 +6,9 @@ function ProjectsCarousel() {
   const [projects, setProjects] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
 
   useEffect(() => {
     async function loadProjects() {
@@ -32,25 +35,66 @@ function ProjectsCarousel() {
     setSelectedImage(null);
   };
 
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].clientX;
+    touchEndX.current = null;
+  };
+
+  const handleTouchMove = (event) => {
+    touchEndX.current = event.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) {
+      return;
+    }
+
+    const distance = touchStartX.current - touchEndX.current;
+    const minimumSwipeDistance = 50;
+
+    if (distance > minimumSwipeDistance) {
+      nextSlide();
+    }
+
+    if (distance < -minimumSwipeDistance) {
+      prevSlide();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   if (projects.length === 0) {
     return null;
   }
 
   const currentProject = projects[currentIndex];
 
+  const technologies = currentProject.technologies || [];
+  const visibleTechnologies = technologies.slice(0, 5);
+  const hiddenTechnologiesCount = technologies.length - visibleTechnologies.length;
+
   return (
     <section className="projects-carousel-section">
       <div className="projects-carousel-header">
         <p className="projects-carousel-subtitle">Ce que j’ai réalisé</p>
+
         <h1>Mes projets web</h1>
-        <p>Découvrez quelques projets réalisés en React, JavaScript, HTML/CSS et SCSS</p>
+
+        <p>Découvrez quelques projets réalisés en React, JavaScript, HTML/CSS et SCSS.</p>
+
         <p>
           Sites vitrines, applications frontend, interfaces dynamiques et projets de
           formation.
         </p>
       </div>
 
-      <div className="projects-carousel-wrapper">
+      <div
+        className="projects-carousel-wrapper"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <button
           className="projects-carousel-btn projects-carousel-btn-prev"
           onClick={prevSlide}
@@ -78,6 +122,7 @@ function ProjectsCarousel() {
                 src={currentProject.image_url}
                 alt={`Aperçu du projet ${currentProject.title}`}
               />
+
               <span className="projects-carousel-thumbnail-label">Agrandir</span>
             </button>
           )}
@@ -89,9 +134,11 @@ function ProjectsCarousel() {
 
             <h3>{currentProject.title}</h3>
 
-            <p className="projects-carousel-short-description">
-              {currentProject.short_description}
-            </p>
+            {currentProject.short_description && (
+              <p className="projects-carousel-short-description">
+                {currentProject.short_description}
+              </p>
+            )}
 
             {currentProject.description && (
               <p className="projects-carousel-long-description">
@@ -99,13 +146,19 @@ function ProjectsCarousel() {
               </p>
             )}
 
-            {currentProject.technologies && (
+            {technologies.length > 0 && (
               <div className="projects-carousel-tech-list">
-                {currentProject.technologies.map((tech) => (
+                {visibleTechnologies.map((tech) => (
                   <span key={tech} className="projects-carousel-tech-pill">
                     {tech}
                   </span>
                 ))}
+
+                {hiddenTechnologiesCount > 0 && (
+                  <span className="projects-carousel-tech-pill projects-carousel-tech-more">
+                    +{hiddenTechnologiesCount}
+                  </span>
+                )}
               </div>
             )}
 
@@ -131,6 +184,7 @@ function ProjectsCarousel() {
                   Voir le projet
                 </a>
               )}
+
               {currentProject.slug === "portfolio-elisa-kaba" && (
                 <NavLink to="/services" className="projects-carousel-link">
                   Voir mes services
