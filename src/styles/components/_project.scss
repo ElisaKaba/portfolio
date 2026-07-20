@@ -6,59 +6,36 @@
    #ffffff - fond
 ========================= */
 
-.projects-carousel-page {
+.projects-carousel-section {
   min-height: 100vh;
+  padding: 80px 20px;
   background: #ffffff;
   color: #5c413c;
 }
 
 /* =========================
-   HERO
+   HEADER
 ========================= */
 
-.projects-carousel-hero {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 90px 24px 46px;
+.projects-carousel-header {
   text-align: center;
+  margin-bottom: 40px;
 }
 
-.projects-carousel-hero-label {
-  margin: 0 0 14px;
-
+.projects-carousel-subtitle {
+  margin: 0 0 8px;
   color: #983122;
-
   font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 1.3px;
+  font-weight: 700;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-.projects-carousel-hero h1 {
+.projects-carousel-header h2 {
   margin: 0;
-
   color: #5c413c;
-
-  font-size: clamp(2.5rem, 6vw, 4.8rem);
-  line-height: 1.05;
-}
-
-.projects-carousel-hero-text {
-  max-width: 720px;
-  margin: 26px auto 0;
-
-  color: #5c413c;
-
-  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
-  line-height: 1.35;
-}
-
-/* =========================
-   SECTION
-========================= */
-
-.projects-carousel-section {
-  padding: 0 24px 90px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
 }
 
 /* =========================
@@ -67,12 +44,56 @@
 
 .projects-carousel-wrapper {
   position: relative;
-
-  width: min(100%, 760px);
+  max-width: 900px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  overflow: visible;
-  touch-action: pan-y;
+/* =========================
+   ARROWS
+========================= */
+
+.projects-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  border: none;
+  border-radius: 50%;
+  background: #983122;
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 5;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.projects-carousel-btn-prev {
+  left: -35px;
+}
+
+.projects-carousel-btn-next {
+  right: -35px;
+}
+
+.projects-carousel-btn:hover {
+  background: #5c413c;
+  transform: translateY(-50%) scale(1.04);
+}
+
+.projects-carousel-btn:focus-visible {
+  outline: 3px solid rgba(152, 49, 34, 0.35);
+  outline-offset: 4px;
 }
 
 /* =========================
@@ -80,71 +101,80 @@
 ========================= */
 
 .projects-carousel-card {
-  box-sizing: border-box;
-
-  width: 100%;
-  height: 680px;
-
-  padding: 34px;
-
+  width: min(100%, 720px);
+  height: 500px;
   background: #ffffff;
-  border: 1px solid rgba(92, 65, 60, 0.15);
   border-radius: 28px;
-
+  padding: 34px;
   box-shadow: 0 20px 50px rgba(92, 65, 60, 0.12);
-
+  border: 1px solid rgba(92, 65, 60, 0.15);
   display: flex;
   flex-direction: column;
-
   overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+
+.projects-carousel-card:hover {
+  box-shadow: 0 28px 70px rgba(152, 49, 34, 0.16);
 }
 
 /* =========================
-   IMAGE
+   THUMBNAIL
 ========================= */
 
-.projects-carousel-image-button {
+.projects-carousel-thumbnail-button {
   position: relative;
-
+  display: block;
   width: 220px;
   height: 135px;
-
-  margin: 0 auto 24px;
+  margin: 0 auto 28px;
   padding: 0;
-
   border: 2px solid rgba(152, 49, 34, 0.22);
   border-radius: 18px;
-
+  overflow: hidden;
   background: #ffffff;
   box-shadow: 0 12px 30px rgba(92, 65, 60, 0.14);
-
-  overflow: hidden;
   cursor: zoom-in;
   flex-shrink: 0;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
-.projects-carousel-image {
-  display: block;
+.projects-carousel-thumbnail-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(152, 49, 34, 0.22);
+}
 
+.projects-carousel-thumbnail-button:focus-visible {
+  outline: 3px solid rgba(152, 49, 34, 0.35);
+  outline-offset: 5px;
+}
+
+.projects-carousel-thumbnail {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   object-position: top center;
+  display: block;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
 }
 
-.projects-carousel-image-label {
+.projects-carousel-thumbnail-button:hover .projects-carousel-thumbnail {
+  transform: scale(1.06);
+  filter: brightness(0.88);
+}
+
+.projects-carousel-thumbnail-label {
   position: absolute;
   right: 10px;
   bottom: 10px;
-
   padding: 6px 11px;
-
   border-radius: 999px;
-
   background: rgba(152, 49, 34, 0.94);
   color: #ffffff;
-
   font-size: 0.72rem;
   font-weight: 800;
 }
@@ -160,124 +190,81 @@
   min-height: 0;
 }
 
-.projects-carousel-text-zone {
-  min-height: 0;
-  overflow: hidden;
-}
-
 .projects-carousel-category {
-  margin: 0 0 10px;
-
+  margin: 0 0 8px;
   color: #983122;
-
-  font-size: 0.95rem;
-  font-weight: 800;
+  font-size: 0.9rem;
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
-.projects-carousel-content h2 {
-  margin: 0 0 18px;
-
+.projects-carousel-content h3 {
+  margin: 0 0 16px;
   color: #5c413c;
-
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  line-height: 1.1;
+  font-size: 2rem;
+  line-height: 1.2;
+  flex-shrink: 0;
 }
 
 .projects-carousel-short-description {
   margin: 0;
-
   color: #5c413c;
-
-  font-size: 1.08rem;
-  line-height: 1.45;
-  font-weight: 800;
-
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-
-  overflow: hidden;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
 .projects-carousel-long-description {
-  margin: 16px 0 0;
-
+  margin: 14px 0 0;
   color: #5c413c;
-
-  font-size: 1rem;
-  line-height: 1.55;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  flex-shrink: 0;
 
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
-
   overflow: hidden;
 }
 
 /* =========================
-   TECHS / PASTILLES
+   TECHS
 ========================= */
 
 .projects-carousel-tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-
-  margin-top: 20px;
-
-  max-height: none;
-  overflow: visible;
-
-  border: none !important;
-  outline: none !important;
-  background: transparent !important;
+  gap: 10px;
+  margin-top: 24px;
+  max-height: 82px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .projects-carousel-tech-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  box-sizing: border-box;
-
-  min-height: 32px;
-  max-width: 100%;
-
-  padding: 7px 13px;
-
-  border: 1px solid rgba(152, 49, 34, 0.18);
+  padding: 8px 14px;
   border-radius: 999px;
-
   background: rgba(152, 49, 34, 0.1);
   color: #983122;
-
-  font-size: 0.88rem;
-  font-weight: 800;
-  line-height: 1.2;
-  text-align: center;
-
-  white-space: nowrap;
-}
-
-.projects-carousel-tech-more {
-  background: #983122;
-  color: #ffffff;
-  border-color: #983122;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid rgba(152, 49, 34, 0.18);
 }
 
 /* =========================
-   LINKS FIXÉS EN BAS
+   LINKS
 ========================= */
 
 .projects-carousel-links {
   display: flex;
-  flex-wrap: wrap;
   gap: 14px;
-
+  flex-wrap: wrap;
   margin-top: auto;
-  padding-top: 22px;
-
+  padding-top: 28px;
   flex-shrink: 0;
+  min-height: 54px;
+  align-items: center;
 }
 
 .projects-carousel-link,
@@ -286,28 +273,27 @@
   align-items: center !important;
   justify-content: center !important;
 
-  box-sizing: border-box !important;
+  width: auto !important;
+  min-width: 90px !important;
+  min-height: 44px !important;
 
-  min-width: 110px !important;
-  min-height: 48px !important;
-
-  padding: 12px 22px !important;
-
-  border: 2px solid #983122 !important;
+  padding: 12px 18px !important;
   border-radius: 999px !important;
 
   background: #983122 !important;
   color: #ffffff !important;
+  border: 2px solid #983122 !important;
 
-  font-size: 1rem !important;
-  font-weight: 800 !important;
-  line-height: 1.2 !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
   text-align: center !important;
   text-decoration: none !important;
   white-space: nowrap !important;
 
   opacity: 1 !important;
   visibility: visible !important;
+  overflow: visible !important;
   text-indent: 0 !important;
 }
 
@@ -316,54 +302,13 @@
   background: #5c413c !important;
   border-color: #5c413c !important;
   color: #ffffff !important;
+  transform: translateY(-2px);
 }
 
-/* =========================
-   ARROWS DESKTOP
-========================= */
-
-.projects-carousel-arrows {
-  display: contents;
-}
-
-.projects-carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: 54px;
-  height: 54px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: #983122;
-  color: #ffffff;
-
-  font-size: 25px;
-  line-height: 1;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: pointer;
-  z-index: 5;
-
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.projects-carousel-arrow-prev {
-  left: -44px;
-}
-
-.projects-carousel-arrow-next {
-  right: -44px;
-}
-
-.projects-carousel-arrow:hover {
-  background: #5c413c;
-  transform: translateY(-50%) scale(1.04);
+.projects-carousel-link:focus-visible,
+.projects-carousel-links a:focus-visible {
+  outline: 3px solid rgba(152, 49, 34, 0.35);
+  outline-offset: 4px;
 }
 
 /* =========================
@@ -373,22 +318,25 @@
 .projects-carousel-dots {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 10px;
-
-  margin-top: 32px;
+  margin-top: 28px;
 }
 
 .projects-carousel-dot {
   width: 11px;
   height: 11px;
-
   padding: 0;
   border: none;
   border-radius: 50%;
-
   background: rgba(92, 65, 60, 0.25);
   cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.projects-carousel-dot:hover {
+  background: rgba(152, 49, 34, 0.6);
 }
 
 .projects-carousel-dot.active {
@@ -396,144 +344,112 @@
   transform: scale(1.25);
 }
 
+.projects-carousel-dot:focus-visible {
+  outline: 3px solid rgba(152, 49, 34, 0.35);
+  outline-offset: 4px;
+}
+
 /* =========================
-   MODAL
+   IMAGE MODAL
 ========================= */
 
-.projects-carousel-modal {
+.projects-image-modal {
   position: fixed;
   inset: 0;
   z-index: 9999;
-
   padding: 32px;
-
   background: rgba(92, 65, 60, 0.82);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: zoom-out;
 }
 
-.projects-carousel-modal-content {
+.projects-image-modal-content {
   position: relative;
-
   max-width: min(1000px, 92vw);
   max-height: 90vh;
-
   padding: 18px;
-
   background: #ffffff;
   border-radius: 24px;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
-
   cursor: default;
 }
 
-.projects-carousel-modal-image {
+.projects-image-modal-img {
   display: block;
-
   max-width: 100%;
   max-height: 80vh;
-
   object-fit: contain;
   border-radius: 16px;
 }
 
-.projects-carousel-modal-close {
+.projects-image-modal-close {
   position: absolute;
   top: -16px;
   right: -16px;
-
   width: 42px;
   height: 42px;
-
   border: none;
   border-radius: 50%;
-
   background: #983122;
   color: #ffffff;
-
   font-size: 2rem;
   line-height: 1;
-
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  cursor: pointer;
 }
 
-.projects-carousel-modal-close:hover {
+.projects-image-modal-close:hover {
   background: #5c413c;
 }
 
 /* =========================
-   TABLETTE
+   TABLET
 ========================= */
 
-@media (max-width: 817px) {
-  .projects-carousel-hero {
-    padding: 80px 20px 38px;
-  }
-
+@media (max-width: 768px) {
   .projects-carousel-section {
-    padding: 0 12px 72px;
+    padding: 56px 16px;
   }
 
   .projects-carousel-wrapper {
-    width: 100%;
     max-width: 100%;
+  }
 
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 18px;
+  .projects-carousel-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 25px;
+  }
+
+  .projects-carousel-btn-prev {
+    left: 4px;
+  }
+
+  .projects-carousel-btn-next {
+    right: 4px;
   }
 
   .projects-carousel-card {
-    grid-column: 1;
-    grid-row: 1;
-
-    width: 100%;
-    max-width: 100%;
-    height: 660px;
-
-    padding: 32px 28px;
-    border-radius: 28px;
+    width: min(100%, 640px);
+    height: 720px;
+    padding: 26px;
   }
 
-  .projects-carousel-arrows {
-    grid-column: 1;
-    grid-row: 2;
-
-    display: flex;
-    justify-content: center;
-    gap: 14px;
+  .projects-carousel-content h3 {
+    font-size: 1.6rem;
   }
 
-  .projects-carousel-arrow {
-    position: static;
-    transform: none;
-
-    width: 38px;
-    height: 38px;
-
-    font-size: 22px;
+  .projects-carousel-short-description {
+    font-size: 1rem;
   }
 
-  .projects-carousel-arrow-prev,
-  .projects-carousel-arrow-next {
-    left: auto;
-    right: auto;
-  }
-
-  .projects-carousel-arrow:hover {
-    transform: none;
-  }
-
-  .projects-carousel-content h2 {
-    font-size: 2rem;
+  .projects-carousel-thumbnail-button {
+    width: 200px;
+    height: 125px;
   }
 }
 
@@ -542,166 +458,74 @@
 ========================= */
 
 @media (max-width: 520px) {
-  .projects-carousel-hero {
-    padding: 70px 16px 32px;
-  }
-
-  .projects-carousel-hero-label {
-    font-size: 0.78rem;
-  }
-
-  .projects-carousel-hero h1 {
-    font-size: clamp(2.2rem, 11vw, 3.2rem);
-  }
-
-  .projects-carousel-hero-text {
-    margin-top: 22px;
-    font-size: 1.18rem;
-    line-height: 1.25;
-  }
-
-  .projects-carousel-section {
-    padding: 0 0 64px;
-  }
-
   .projects-carousel-wrapper {
-    width: 100%;
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
 
   .projects-carousel-card {
-    width: 100vw;
-    max-width: 100vw;
-    height: 640px;
-
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-
-    padding: 30px 20px 32px;
-
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
-
-    box-shadow: 0 18px 46px rgba(92, 65, 60, 0.12);
+    order: 1;
+    width: 100%;
+    height: 760px;
+    padding: 24px;
   }
 
-  .projects-carousel-image-button {
-    width: 180px;
-    height: 112px;
-    margin-bottom: 22px;
+  .projects-carousel-btn {
+    position: static;
+    transform: none;
+    width: 48px;
+    height: 48px;
+    font-size: 25px;
   }
 
-  .projects-carousel-content h2 {
-    margin-bottom: 16px;
-    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  .projects-carousel-btn:hover {
+    transform: none;
   }
 
-  .projects-carousel-short-description {
-    font-size: 1rem;
-    line-height: 1.45;
-    -webkit-line-clamp: 2;
+  .projects-carousel-btn-prev {
+    order: 2;
+  }
+
+  .projects-carousel-btn-next {
+    order: 3;
+  }
+
+  .projects-carousel-thumbnail-button {
+    width: 100%;
+    max-width: 240px;
+    height: 145px;
   }
 
   .projects-carousel-long-description {
-    margin-top: 16px;
-    font-size: 0.95rem;
-    line-height: 1.55;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 6;
   }
 
   .projects-carousel-tech-list {
-    gap: 8px;
-    margin-top: 18px;
-  }
-
-  .projects-carousel-tech-pill {
-    min-height: 32px;
-    padding: 7px 12px;
-    font-size: 0.82rem;
+    max-height: 92px;
   }
 
   .projects-carousel-links {
     flex-direction: column;
-    gap: 12px;
-    padding-top: 20px;
   }
 
   .projects-carousel-link,
   .projects-carousel-links a {
     width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    min-height: 44px !important;
-
-    padding: 10px 14px !important;
-
-    font-size: 0.92rem !important;
-    white-space: normal !important;
+    text-align: center !important;
   }
 
-  .projects-carousel-arrow {
-    width: 36px;
-    height: 36px;
-    font-size: 21px;
-  }
-
-  .projects-carousel-dots {
-    margin-top: 28px;
-    padding: 0 16px;
-  }
-
-  .projects-carousel-modal {
+  .projects-image-modal {
     padding: 18px;
   }
 
-  .projects-carousel-modal-content {
+  .projects-image-modal-content {
     padding: 12px;
     border-radius: 18px;
   }
 
-  .projects-carousel-modal-close {
+  .projects-image-modal-close {
     top: -12px;
     right: -12px;
   }
 }
-
-/* =========================
-   VERY SMALL MOBILE
-========================= */
-
-@media (max-width: 360px) {
-  .projects-carousel-hero h1 {
-    font-size: 2rem;
-  }
-
-  .projects-carousel-hero-text {
-    font-size: 1.05rem;
-  }
-
-  .projects-carousel-card {
-    height: 620px;
-    padding: 26px 16px 30px;
-  }
-
-  .projects-carousel-image-button {
-    width: 160px;
-    height: 100px;
-  }
-
-  .projects-carousel-content h2 {
-    font-size: 1.6rem;
-  }
-
-  .projects-carousel-short-description {
-    font-size: 0.95rem;
-  }
-
-  .projects-carousel-long-description {
-    font-size: 0.9rem;
-  }
-
-  .projects-carousel-tech-pill {
-    font-size: 0.78rem;
-  }
-} 

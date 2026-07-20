@@ -1,121 +1,121 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
+  const [transormBurger, setTransformBurger] = useState(true);
+  const [transformLogo, setTransformLogo] = useState(true);
 
-  const toggleMenu = () => {
-    setShowNav((prevState) => !prevState);
-  };
-
-  const closeMenu = () => {
-    setShowNav(false);
+  const handleShowList = () => {
+    setShowNav(!showNav);
+    setTransformBurger(!transormBurger);
+    setTransformLogo(!transformLogo);
   };
 
   return (
-    <header className="header">
-      {/* HEADER MOBILE */}
+    <section className="header">
       <div className="logoAndNav-responsive">
-        <NavLink className="logoLink" to="/" onClick={closeMenu}>
-          <img className="logo" src="/img/favicon-32x32.png" alt="Logo Elisa Kaba" />
+        <NavLink className="logoLink" to="/">
+          <div className={`${transformLogo ? "showLogo" : "hideLogo"}`}>
+            <img
+              className="logo"
+              src="../../../img/favicon-32x32.png"
+              alt="Logo Elisa"
+            ></img>
+          </div>
         </NavLink>
+        <div className="menuList">
+          <button onClick={handleShowList}>
+            <img
+              src="../../../img/menuBurger.png"
+              alt="Menu hamburger"
+              className="hamburgerNav"
+            />
+          </button>
 
-        <button
-          className={`burgerButton ${showNav ? "isOpen" : ""}`}
-          onClick={toggleMenu}
-          type="button"
-          aria-label={showNav ? "Fermer le menu" : "Ouvrir le menu"}
-          aria-expanded={showNav}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <aside className={`mobileMenu ${showNav ? "showLinks" : "hideLinks"}`}>
-          <nav aria-label="Navigation mobile">
+          <aside className={` ${showNav ? "showLinks" : "hideLinks"}`}>
             <ul id="hiddenMenu">
-              <li onClick={closeMenu}>
-                <NavLink className="navItem" to="/">
+              <li className="accueil" onClick={handleShowList}>
+                <NavLink className="accueilNavItem" to="/">
                   Accueil
                 </NavLink>
               </li>
-
-              <li onClick={closeMenu}>
-                <NavLink className="navItem" to="/quisuisje">
+              <li className="qui" onClick={handleShowList}>
+                <NavLink className="quiNavItem" to="/quisuisje">
                   Qui suis-je ?
                 </NavLink>
               </li>
-
-              <li onClick={closeMenu}>
-                <NavLink className="navItem" to="/competences">
+              <li className="competences" onClick={handleShowList}>
+                <NavLink className="competencesNavItem" to="/competences">
                   Mes compétences
                 </NavLink>
               </li>
-
-              <li onClick={closeMenu}>
-                <NavLink className="navItem" to="/projets">
-                  Mes réalisations
+              <li className="portfolio" onClick={handleShowList}>
+                <NavLink className="projets" to="/projets">
+                  Mon portfolio
                 </NavLink>
               </li>
-
-              <li onClick={closeMenu}>
-                <NavLink className="navItem" to="/services">
+              <li className="propositions" onClick={handleShowList}>
+                <NavLink className="services" to="/services">
                   Services
                 </NavLink>
               </li>
-
-              <li onClick={closeMenu}>
-                <NavLink className="navItem" to="/contact">
+              <li className="contact" onClick={handleShowList}>
+                <NavLink className="contact" to="/contact">
                   Contactez-moi
                 </NavLink>
               </li>
             </ul>
-          </nav>
-        </aside>
+          </aside>
+        </div>
       </div>
 
-      {/* HEADER DESKTOP */}
       <div className="logoAndNav">
         <NavLink className="logoLink" to="/">
-          <img className="logo" src="/img/favicon-96x96.png" alt="Logo Elisa Kaba" />
+          <img
+            className="logo"
+            src="../../../img/favicon-96x96.png"
+            alt="Logo Elisa"
+          ></img>
         </NavLink>
-
-        <nav className="menu" aria-label="Navigation principale">
+        <nav className="menu">
           <ul>
-            <li>
-              <NavLink className="navItem" to="/quisuisje">
-                Qui suis-je ?
+            {" "}
+            <li className="qui" onClick={handleShowList}>
+              <NavLink className="qui" to="/quisuisje">
+                {" "}
+                Qui suis-je?
               </NavLink>
-            </li>
-
-            <li>
-              <NavLink className="navItem" to="/competences">
+            </li>{" "}
+            <li className="competences" onClick={handleShowList}>
+              <NavLink className="competences" to="/competences">
+                {" "}
                 Mes compétences
               </NavLink>
             </li>
-
-            <li>
-              <NavLink className="navItem" to="/projets">
+            <li className="portfolio" onClick={handleShowList}>
+              <NavLink className="projets" to="/projets">
+                {" "}
                 Mes réalisations
               </NavLink>
             </li>
-
-            <li>
-              <NavLink className="navItem" to="/services">
-                Services
+            <li className="propositions" onClick={handleShowList}>
+              <NavLink className="services" to="/services">
+                {" "}
+                Services{" "}
               </NavLink>
             </li>
-
-            <li>
-              <NavLink className="navItem" to="/contact">
+            <li className="contact" onClick={handleShowList}>
+              <NavLink className="contact" to="/contact">
+                {" "}
                 Contactez-moi
               </NavLink>
             </li>
           </ul>
         </nav>
       </div>
-    </header>
+    </section>
   );
 };
 
