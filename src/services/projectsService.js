@@ -1,16 +1,6 @@
-import { supabase } from "../lib/supabaseClient";
+import { localProjects } from "../data/localProjects";
 
 export async function getProjects() {
-  const { data, error } = await supabase
-    .from("projects")
-    .select("*")
-    .eq("is_visible", true)
-    .order("display_order", { ascending: true });
-
-  if (error) {
-    console.error("Erreur Supabase projects:", error);
-    return [];
-  }
-
-  return data;
+  console.log("Projets locaux chargés :", localProjects);
+  return localProjects;
 }
