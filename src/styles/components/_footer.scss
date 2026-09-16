@@ -1,35 +1,183 @@
+/* =========================
+   STRUCTURE GLOBALE
+========================= */
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  width: 100%;
+
+  flex: 1 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer {
+  flex-shrink: 0;
+
+  box-sizing: border-box;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 12px 24px;
+
+  background-color: #fff;
+
+  border-top: solid 3px #983122;
+
+  .littleLogo {
+    display: flex;
+    align-items: center;
+  }
+
   .madeBy,
   .contact {
-    font-size: 16px;
     margin: 0;
+
+    font-size: 16px;
+
     text-decoration: none;
   }
+
   .madeBy {
     font-size: 12px;
   }
+
+  .contact {
+    color: #5c413c;
+  }
+
   .contact:visited {
     color: #983122;
   }
+
+  .reseaux,
+  .gitLink,
+  .linkedinLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gitLink,
+  .linkedinLink {
+    text-decoration: none;
+  }
+
   .link,
   .git {
+    display: block;
+
     width: 32px;
     height: 32px;
-    padding: 20px;
+
+    padding: 0;
+
+    object-fit: contain;
+  }
+
+  .logo {
+    display: block;
+
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
   }
 }
+
+/* =========================
+   TABLETTE / MOBILE
+========================= */
+
 @media screen and (max-width: 576px) {
   .footer {
+    padding: 10px 12px;
+
+    gap: 12px;
+
     .contact {
       font-size: 12px;
     }
+
     .madeBy {
       font-size: 10px;
     }
+
     .link,
     .git {
-      width: 15px;
-      height: 15px;
+      width: 22px;
+      height: 22px;
+    }
+
+    .logo {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+
+/* =========================
+   TRÈS PETIT MOBILE
+========================= */
+
+@media screen and (max-width: 360px) {
+  .footer {
+    padding: 8px;
+
+    gap: 8px;
+
+    .madeBy {
+      font-size: 9px;
+    }
+
+    .contact {
+      font-size: 11px;
+    }
+
+    .link,
+    .git {
+      width: 20px;
+      height: 20px;
+    }
+
+    .logo {
+      width: 22px;
+      height: 22px;
     }
   }
 }

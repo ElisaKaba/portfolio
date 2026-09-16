@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="madeBy">Made by eke</div>
       <div className="reseaux">
         <a
-          href="https://www.github.com/ekeyangwen"
+          href="https://github.com/ElisaKaba?tab=repositories"
           target="_blank"
           rel="noreferrer"
           className="gitLink"

@@ -1,5 +1,5 @@
-import { BrowserRouter } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Header from "./Components/Header";
 import Home from "./pages/home";
 import NotFound from "./pages/notFound";
@@ -12,18 +12,22 @@ import Services from "./pages/services";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/quisuisje" element={<QuiSuisJe />} />
-          <Route exact path="/competences" element={<Competences />} />
-          <Route exact path="/projets" element={<Projets />} />
-          <Route exact path="/services" element={<Services />} />
-          <Route exact path="/contact" element={<ContactForm />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+
+        <main className="app-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/quisuisje" element={<QuiSuisJe />} />
+            <Route path="/competences" element={<Competences />} />
+            <Route path="/projets" element={<Projets />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<ContactForm />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+
         <Footer />
       </BrowserRouter>
     </div>

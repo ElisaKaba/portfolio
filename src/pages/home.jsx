@@ -8,7 +8,7 @@ const Home = () => {
         <div className="presentationEtContact">
           <h1 className="nom">
             Elisa Kaba <br />
-            Développeuse frontend React & UX/UI
+            Développeuse web freelance React & Next.js
           </h1>
 
           <h2 className="titre">Conceptrice développeuse d'applications</h2>
@@ -16,19 +16,32 @@ const Home = () => {
           <h3 className="recherche">
             Formation fullstack JAVA ANGULAR REACT
             <br />
-            Plus sensible au frontend avec un intérêt particulier pour les questions
-            d'UX-UI
+            React · Next.js · TypeScript · Strapi · Supabase <br />
+            Je crée et fais évoluer des sites et applications web modernes, accessibles et
+            administrables.
           </h3>
-
-          <NavLink className="contactSend" to="/contact">
-            <div className="enveloppe">
-              <img
-                src="../../../img/noun-send-1070405.png"
-                alt="Enveloppe de contact"
-                className="send"
-              />
-            </div>
-          </NavLink>
+          <div className="contact-and-projects">
+            <NavLink className="contactSend" to="/contact">
+              <div className="enveloppe">
+                <img
+                  src="../../../img/noun-send-1070405.png"
+                  alt="Enveloppe de contact"
+                  className="send"
+                />
+                Parlons de votre projet
+              </div>
+            </NavLink>{" "}
+            <NavLink className="projectsSend" to="/projets">
+              <div className="enveloppe">
+                <img
+                  src="../../../img/noun-projects-1070405.png"
+                  alt="projects-icon"
+                  className="projects-see "
+                />
+                Voir mes réalisations{" "}
+              </div>
+            </NavLink>{" "}
+          </div>
         </div>
 
         <div className="imgFond">

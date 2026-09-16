@@ -1,190 +1,352 @@
 .home {
-  height: 86vh;
+  width: 100%;
+  min-height: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
 
   .background {
+    position: relative;
+
+    width: 100%;
+    min-height: 0;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
     background-color: #983122;
-    height: 86vh;
+
+    overflow: hidden;
   }
 
   .imgFond {
-    filter: opacity(0.6);
-    z-index: 1;
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
     height: 100%;
+
+    filter: opacity(0.6);
+
+    z-index: 1;
+
+    overflow: hidden;
   }
 
   .backgroundImg {
-    height: 86vh;
+    display: block;
+
     width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
   }
 
   .presentationEtContact {
-    text-align: center;
-    position: absolute;
+    position: relative;
     z-index: 3;
+
+    box-sizing: border-box;
+
+    width: 100%;
+
+    flex: 1;
+
+    margin: 0;
+
+    padding: 30px 24px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    margin-top: 100px;
-
-    height: 40%;
-    width: 100%;
+    text-align: center;
   }
 
   .nom,
   .titre {
+    margin: 0;
+
+    color: #ffffff;
+
     font-size: 40px;
-    color: #fff;
-    margin: 0px;
+  }
+
+  .titre {
+    margin-top: 10px;
   }
 
   .recherche {
-    color: #fff;
-    margin: 20px;
-    margin-top: 45px;
+    margin: 30px 20px 0;
+
+    color: #ffffff;
+
     line-height: 1.5;
-    margin-bottom: 0;
+  }
+
+  /* =========================
+     BOUTONS
+  ========================= */
+
+  .contact-and-projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 24px;
+
+    margin-top: 36px;
+  }
+
+  .contactSend,
+  .projectsSend {
+    color: #5c413c;
+    text-decoration: none;
   }
 
   .enveloppe {
-    background-color: #fff;
-    border: #983122 solid 5px;
-    margin-top: 90px;
+    box-sizing: border-box;
+
+    min-width: 220px;
+    min-height: 64px;
+
+    padding: 10px 16px;
+
+    background-color: #ffffff;
+    border: 5px solid #983122;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #5c413c;
+
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
   }
 
-  .send {
-    width: 96px;
-    height: 96px;
+  .enveloppe:hover {
+    transform: translateY(-2px);
+
+    background-color: #faf7f2;
+  }
+
+  .send,
+  .projects-see {
+    width: 38px;
+    height: 38px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
   }
 }
 
 /* =========================
-   RESPONSIVE TABLETTE
-   Desktop conservé au-dessus
+   TABLETTE
 ========================= */
 
 @media screen and (max-width: 817px) {
   .home {
-    height: 100vh;
-    min-height: 720px;
-    overflow: hidden;
+    flex: 1;
+
+    min-height: 0;
 
     .background {
-      height: 100vh;
-      min-height: 720px;
-      position: relative;
-    }
+      flex: 1;
 
-    .backgroundImg {
-      height: 100vh;
-      min-height: 720px;
-      width: 100%;
-      object-fit: cover;
-      object-position: center;
+      min-height: 0;
+
+      overflow: hidden;
     }
 
     .presentationEtContact {
       box-sizing: border-box;
 
-      top: 0;
-      left: 0;
-
-      height: 100%;
-      min-height: 720px;
       width: 100%;
 
-      margin-top: 0;
-      padding: 120px 32px 80px;
+      min-height: 100%;
+
+      padding: 70px 28px 60px;
 
       justify-content: center;
     }
 
-    .nom,
-    .titre {
+    .nom {
+      width: 100%;
       max-width: 720px;
-      font-size: clamp(32px, 6vw, 52px);
+
+      font-size: clamp(2rem, 6vw, 3.2rem);
       line-height: 1.15;
+
+      overflow-wrap: break-word;
     }
 
     .titre {
+      width: 100%;
+      max-width: 680px;
+
       margin-top: 18px;
+
+      font-size: clamp(1.5rem, 4.6vw, 2.3rem);
+      line-height: 1.2;
+
+      overflow-wrap: break-word;
     }
 
     .recherche {
+      width: 100%;
       max-width: 680px;
 
-      margin: 34px auto 0;
+      margin: 30px auto 0;
 
-      font-size: clamp(18px, 3vw, 24px);
-      line-height: 1.45;
+      font-size: clamp(1rem, 2.8vw, 1.3rem);
+      line-height: 1.5;
+
+      overflow-wrap: break-word;
+    }
+
+    .contact-and-projects {
+      width: 100%;
+      max-width: 560px;
+
+      margin-top: 34px;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      gap: 14px;
+    }
+
+    .contactSend,
+    .projectsSend {
+      width: 100%;
+      max-width: 240px;
     }
 
     .enveloppe {
-      margin-top: 64px;
+      width: 100%;
+
+      min-width: 0;
+      min-height: 52px;
+
+      padding: 10px 14px;
+
       border-width: 4px;
+
+      gap: 10px;
+
+      font-size: 0.92rem;
+
+      white-space: normal;
     }
 
-    .send {
-      width: 78px;
-      height: 78px;
+    .send,
+    .projects-see {
+      width: 32px;
+      height: 32px;
     }
   }
 }
 
 /* =========================
-   RESPONSIVE MOBILE
+   MOBILE
 ========================= */
 
 @media screen and (max-width: 529px) {
   .home {
-    height: 100vh;
-    min-height: 680px;
-
     .background {
-      height: 100vh;
-      min-height: 680px;
-    }
-
-    .backgroundImg {
-      height: 100vh;
-      min-height: 680px;
-      object-fit: cover;
-      object-position: center;
+      overflow: hidden;
     }
 
     .presentationEtContact {
-      min-height: 680px;
-      padding: 96px 20px 64px;
+      min-height: 100%;
+
+      padding: 46px 16px 42px;
+
+      justify-content: flex-start;
     }
 
-    .nom,
+    .nom {
+      max-width: 100%;
+
+      font-size: clamp(1.65rem, 8.5vw, 2.3rem);
+      line-height: 1.15;
+    }
+
     .titre {
       max-width: 100%;
-      font-size: clamp(24px, 8vw, 36px);
-      line-height: 1.18;
-    }
 
-    .titre {
-      margin-top: 16px;
-      font-size: clamp(22px, 7vw, 32px);
+      margin-top: 14px;
+
+      font-size: clamp(1.15rem, 6vw, 1.65rem);
+      line-height: 1.2;
     }
 
     .recherche {
-      margin-top: 30px;
+      max-width: 100%;
 
-      font-size: clamp(15px, 4.6vw, 19px);
+      margin-top: 22px;
+
+      font-size: clamp(0.84rem, 4.1vw, 1rem);
       line-height: 1.45;
     }
 
-    .enveloppe {
-      margin-top: 48px;
-      border-width: 3px;
+    .contact-and-projects {
+      width: 100%;
+      max-width: 100%;
+
+      margin-top: 24px;
+
+      flex-direction: column;
+      align-items: center;
+
+      gap: 10px;
     }
 
-    .send {
-      width: 64px;
-      height: 64px;
+    .contactSend,
+    .projectsSend {
+      width: 100%;
+      max-width: 250px;
+    }
+
+    .enveloppe {
+      width: 100%;
+
+      min-width: 0;
+      min-height: 46px;
+
+      padding: 8px 12px;
+
+      border-width: 3px;
+
+      gap: 8px;
+
+      font-size: 0.86rem;
+      line-height: 1.2;
+
+      white-space: normal;
+    }
+
+    .send,
+    .projects-see {
+      width: 27px;
+      height: 27px;
     }
   }
 }
@@ -195,57 +357,65 @@
 
 @media screen and (max-width: 360px) {
   .home {
-    min-height: 640px;
-
-    .background {
-      min-height: 640px;
-    }
-
-    .backgroundImg {
-      min-height: 640px;
-    }
-
     .presentationEtContact {
-      min-height: 640px;
-      padding: 88px 16px 56px;
+      padding: 38px 14px 34px;
     }
 
-    .nom,
-    .titre {
-      font-size: 22px;
+    .nom {
+      font-size: 1.45rem;
     }
 
     .titre {
-      font-size: 20px;
+      font-size: 1.05rem;
     }
 
     .recherche {
-      font-size: 14px;
+      font-size: 0.8rem;
       line-height: 1.4;
     }
 
-    .enveloppe {
-      margin-top: 42px;
+    .contact-and-projects {
+      margin-top: 20px;
     }
 
-    .send {
-      width: 56px;
-      height: 56px;
+    .contactSend,
+    .projectsSend {
+      max-width: 220px;
+    }
+
+    .enveloppe {
+      min-height: 42px;
+
+      padding: 7px 10px;
+
+      font-size: 0.78rem;
+    }
+
+    .send,
+    .projects-see {
+      width: 23px;
+      height: 23px;
     }
   }
 }
 
 /* =========================
-   DESKTOP LARGE ORIGINAL
+   GRAND DESKTOP
 ========================= */
 
 @media screen and (min-width: 1200px) {
   .home {
     .nom,
     .titre {
+      margin: 0;
+
+      color: #ffffff;
+
       font-size: 64px;
-      color: #fff;
-      margin: 0px;
+    }
+
+    .titre {
+      margin-top: 10px;
     }
   }
 }
