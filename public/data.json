@@ -1,0 +1,118 @@
+{
+  "front": [
+    {
+      "id": 1,
+      "name": "HTML 5",
+      "src": "../../../img/icons8-html-5-50.png",
+      "alt": "HTML"
+    },
+    {
+      "id": 2,
+      "name": "CSS 3",
+      "src": "../../../img/icons8-css3-50.png",
+      "alt": "CSS"
+    },
+    {
+      "id": 3,
+      "name": "JS",
+      "src": "../../../img/icons8-javascript-50.png",
+      "alt": "JS"
+    },
+    {
+      "id": 4,
+      "name": "Sass",
+      "src": "../../../img/icons8-sass-50.png",
+      "alt": "sass"
+    }
+  ],
+
+  "devtools": [
+    {
+      "id": 1,
+      "name": "Github",
+      "src": "../../../img/icons8-github-50.png",
+      "alt": "Git"
+    },
+    {
+      "id": 2,
+      "name": "Figma",
+      "src": "../../../img/icons8-figma-50.png",
+      "alt": "Figma"
+    },
+    {
+      "id": 3,
+      "name": "W3C",
+      "src": "../../../img/icons8-w3c-50.png",
+      "alt": "W3C"
+    },
+    {
+      "id": 4,
+      "name": "Notion",
+      "src": "../../../img/icons8-notion-50.png",
+      "alt": "Notion"
+    }
+  ],
+  "environement": [
+    {
+      "id": 1,
+      "name": "Windows",
+      "src": "../../../img/icons8-logo-windows-50.png",
+      "alt": "Windows"
+    },
+    {
+      "id": 2,
+      "name": "VsCode",
+      "src": "../../../img/icons8-visual-studio-50.png",
+      "alt": "VsCode"
+    },
+    {
+      "id": 3,
+      "name": "Filezilla",
+      "src": "../../../img/icons8-filezilla-50.png",
+      "alt": "Filezilla"
+    }
+  ],
+  "librairies": [
+    {
+      "id": 1,
+      "name": "React",
+      "src": "../../../img/icons8-react-48.png",
+      "alt": "React"
+    },
+    {
+      "id": 2,
+      "name": "Redux",
+      "src": "../../../img/icons8-redux-50.png",
+      "alt": "Redux"
+    },
+    {
+      "id": 3,
+      "name": "Recharts",
+      "src": "../../../img/recharts.png",
+      "alt": "Recharts"
+    }
+  ],
+
+  "hardSkills": [
+    {
+      "id": 1,
+      "name": "Gestion de projet"
+    },
+    {
+      "id": 2,
+      "name": "Respect d'un cahier des charges"
+    },
+    {
+      "id": 3,
+      "name": "Travail en équipe et gestion d'équipe"
+    },
+    {
+      "id": 4,
+      "name": "Autonomie, prise d'initiatives"
+    },
+    {
+      "id": 5,
+      "name": "Travail efficace à distance"
+    }
+  ]
+}

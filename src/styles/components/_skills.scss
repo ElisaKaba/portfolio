@@ -1,0 +1,533 @@
+/* =========================
+   SKILLS CAROUSEL
+   Palette :
+   #983122 - accent
+   #5c413c - texte
+   #ffffff - fond
+========================= */
+
+.skills-carousel-section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: #ffffff;
+  color: #5c413c;
+}
+
+/* =========================
+   HEADER DESKTOP
+========================= */
+
+.skills-carousel-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.skills-carousel-subtitle {
+  margin: 0 0 8px;
+
+  color: #983122;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.skills-carousel-header h1,
+.skills-carousel-header h2 {
+  margin: 0;
+
+  color: #5c413c;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+/* =========================
+   STAGE DESKTOP
+========================= */
+
+.skills-carousel-stage {
+  position: relative;
+
+  width: min(100%, 720px);
+  margin: 0 auto;
+
+  overflow: visible;
+}
+
+/* =========================
+   CARD DESKTOP
+========================= */
+
+.skills-carousel-card {
+  box-sizing: border-box;
+
+  width: 100%;
+  min-height: 360px;
+
+  padding: 36px;
+
+  background: #ffffff;
+  border-radius: 28px;
+  border: 1px solid rgba(92, 65, 60, 0.15);
+
+  box-shadow: 0 20px 50px rgba(92, 65, 60, 0.12);
+
+  transition: box-shadow 0.25s ease;
+}
+
+.skills-carousel-card:hover {
+  box-shadow: 0 28px 70px rgba(152, 49, 34, 0.16);
+}
+
+/* =========================
+   ARROWS DESKTOP
+========================= */
+
+.skills-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 54px;
+  height: 54px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #983122;
+  color: #ffffff;
+
+  font-size: 25px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.skills-carousel-btn-prev {
+  left: -90px;
+}
+
+.skills-carousel-btn-next {
+  right: -90px;
+}
+
+.skills-carousel-btn:hover {
+  background: #5c413c;
+  transform: translateY(-50%) scale(1.04);
+}
+
+.skills-carousel-btn:focus-visible {
+  outline: 3px solid rgba(152, 49, 34, 0.35);
+  outline-offset: 4px;
+}
+
+/* =========================
+   CONTENT DESKTOP
+========================= */
+
+.skills-carousel-icon {
+  width: fit-content;
+  min-width: 58px;
+  max-width: 100%;
+
+  min-height: 58px;
+
+  margin-bottom: 22px;
+  padding: 10px 14px;
+
+  border-radius: 18px;
+
+  background: #983122;
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.skills-carousel-category {
+  margin: 0 0 8px;
+
+  color: #983122;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.skills-carousel-card h3 {
+  margin: 0 0 18px;
+
+  color: #5c413c;
+
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.skills-carousel-description {
+  margin: 0;
+
+  color: #5c413c;
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   LEVEL DESKTOP
+========================= */
+
+.skills-carousel-level-wrapper {
+  margin-top: 30px;
+}
+
+.skills-carousel-level-wrapper span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #5c413c;
+
+  font-weight: 700;
+}
+
+.skills-carousel-level-bar {
+  width: 100%;
+  height: 10px;
+
+  background: rgba(92, 65, 60, 0.14);
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.skills-carousel-level-fill {
+  height: 100%;
+
+  background: #983122;
+  border-radius: 999px;
+}
+
+/* =========================
+   DOTS DESKTOP
+========================= */
+
+.skills-carousel-dots {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.skills-carousel-dot {
+  width: 11px;
+  height: 11px;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(92, 65, 60, 0.25);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.skills-carousel-dot:hover {
+  background: rgba(152, 49, 34, 0.6);
+}
+
+.skills-carousel-dot.active {
+  background: #983122;
+  transform: scale(1.25);
+}
+
+.skills-carousel-dot:focus-visible {
+  outline: 3px solid rgba(152, 49, 34, 0.35);
+  outline-offset: 4px;
+}
+
+/* ======================================================
+   RESPONSIVE UNIQUEMENT
+   Desktop conservé au-dessus.
+====================================================== */
+
+/* =========================
+   DESKTOP INTERMÉDIAIRE
+   Les flèches passent sous la carte avant de sortir de l’écran
+========================= */
+
+@media screen and (max-width: 980px) {
+  .skills-carousel-section {
+    overflow-x: hidden;
+  }
+
+  .skills-carousel-stage {
+    width: min(100%, 720px);
+
+    display: grid;
+    grid-template-columns: 1fr auto auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 18px;
+    row-gap: 22px;
+
+    overflow: visible;
+  }
+
+  .skills-carousel-card {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .skills-carousel-btn {
+    position: static;
+    top: auto;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 24px;
+
+    transform: none;
+  }
+
+  .skills-carousel-btn:hover {
+    transform: scale(1.04);
+  }
+
+  .skills-carousel-btn-prev {
+    grid-column: 2;
+    grid-row: 2;
+
+    justify-self: end;
+
+    left: auto;
+    right: auto;
+  }
+
+  .skills-carousel-btn-next {
+    grid-column: 3;
+    grid-row: 2;
+
+    justify-self: start;
+
+    left: auto;
+    right: auto;
+  }
+}
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media screen and (max-width: 817px) {
+  .skills-carousel-section {
+    padding: 70px 20px;
+  }
+
+  .skills-carousel-header {
+    margin-bottom: 34px;
+  }
+
+  .skills-carousel-header h1,
+  .skills-carousel-header h2 {
+    font-size: clamp(2.2rem, 7vw, 3rem);
+  }
+
+  .skills-carousel-stage {
+    width: min(100%, 640px);
+  }
+
+  .skills-carousel-card {
+    width: 100%;
+    min-height: 340px;
+
+    padding: 32px;
+  }
+
+  .skills-carousel-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .skills-carousel-description {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .skills-carousel-icon {
+    min-width: 54px;
+    min-height: 54px;
+
+    padding: 9px 13px;
+
+    font-size: 0.92rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 529px) {
+  .skills-carousel-section {
+    padding: 58px 0 64px;
+  }
+
+  .skills-carousel-header {
+    padding: 0 18px;
+    margin-bottom: 30px;
+  }
+
+  .skills-carousel-subtitle {
+    font-size: 0.78rem;
+  }
+
+  .skills-carousel-header h1,
+  .skills-carousel-header h2 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .skills-carousel-stage {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0;
+
+    grid-template-columns: 1fr auto auto 1fr;
+    column-gap: 14px;
+    row-gap: 20px;
+  }
+
+  .skills-carousel-card {
+    box-sizing: border-box;
+
+    width: 100vw;
+    max-width: 100vw;
+
+    min-height: 360px;
+
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    padding: 30px 22px;
+
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+
+    box-shadow: 0 18px 46px rgba(92, 65, 60, 0.12);
+  }
+
+  .skills-carousel-btn {
+    width: 38px;
+    height: 38px;
+
+    font-size: 22px;
+  }
+
+  .skills-carousel-icon {
+    width: fit-content;
+    min-width: 50px;
+    max-width: 100%;
+
+    min-height: 44px;
+
+    padding: 8px 12px;
+
+    border-radius: 16px;
+
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .skills-carousel-card h3 {
+    font-size: 1.55rem;
+    line-height: 1.2;
+  }
+
+  .skills-carousel-description {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .skills-carousel-level-wrapper {
+    margin-top: 26px;
+  }
+
+  .skills-carousel-dots {
+    margin-top: 26px;
+    padding: 0 16px;
+  }
+}
+
+/* =========================
+   TRÈS PETIT MOBILE
+========================= */
+
+@media screen and (max-width: 360px) {
+  .skills-carousel-section {
+    padding: 50px 0 56px;
+  }
+
+  .skills-carousel-stage {
+    column-gap: 12px;
+    row-gap: 18px;
+  }
+
+  .skills-carousel-card {
+    min-height: 340px;
+    padding: 28px 18px;
+  }
+
+  .skills-carousel-header h1,
+  .skills-carousel-header h2 {
+    font-size: 1.9rem;
+  }
+
+  .skills-carousel-icon {
+    min-width: 46px;
+    min-height: 40px;
+
+    padding: 7px 10px;
+
+    font-size: 0.78rem;
+  }
+
+  .skills-carousel-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .skills-carousel-description {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .skills-carousel-btn {
+    width: 36px;
+    height: 36px;
+  }
+}

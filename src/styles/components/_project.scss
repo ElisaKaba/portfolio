@@ -1,0 +1,657 @@
+/* =========================
+   PROJECTS CAROUSEL
+========================= */
+
+.projects-carousel-section {
+  min-height: 100vh;
+  padding: 80px 20px;
+
+  background: #ffffff;
+  color: #5c413c;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.projects-carousel-header {
+  margin-bottom: 40px;
+
+  text-align: center;
+}
+
+.projects-carousel-subtitle {
+  margin: 0 0 8px;
+
+  color: #983122;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.projects-carousel-header h1,
+.projects-carousel-header h2 {
+  margin: 0;
+
+  color: #5c413c;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.projects-carousel-header p {
+  max-width: 720px;
+
+  margin: 18px auto 0;
+
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* =========================
+   WRAPPER DESKTOP
+========================= */
+
+.projects-carousel-wrapper {
+  position: relative;
+
+  width: min(100%, 900px);
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.projects-carousel-card {
+  box-sizing: border-box;
+
+  width: min(100%, 720px);
+  height: 500px;
+
+  padding: 34px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(92, 65, 60, 0.15);
+  border-radius: 28px;
+
+  box-shadow: 0 20px 50px rgba(92, 65, 60, 0.12);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  touch-action: pan-y;
+}
+
+/* =========================
+   FLÈCHES DESKTOP
+========================= */
+
+.projects-carousel-btn {
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 54px;
+  height: 54px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #983122;
+  color: #ffffff;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+}
+
+.projects-carousel-btn-prev {
+  left: 0;
+}
+
+.projects-carousel-btn-next {
+  right: 0;
+}
+
+.projects-carousel-btn:hover {
+  background: #5c413c;
+}
+
+/* =========================
+   NAVIGATION MOBILE
+   cachée sur desktop
+========================= */
+
+.projects-carousel-mobile-navigation {
+  display: none;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.projects-carousel-thumbnail-button {
+  position: relative;
+
+  display: block;
+
+  width: 220px;
+  height: 135px;
+
+  margin: 0 auto 28px;
+  padding: 0;
+
+  border: 2px solid rgba(152, 49, 34, 0.22);
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-shadow: 0 12px 30px rgba(92, 65, 60, 0.14);
+
+  cursor: zoom-in;
+
+  flex-shrink: 0;
+}
+
+.projects-carousel-thumbnail {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: top center;
+}
+
+.projects-carousel-thumbnail-label {
+  position: absolute;
+
+  right: 10px;
+  bottom: 10px;
+
+  padding: 6px 11px;
+
+  border-radius: 999px;
+
+  background: rgba(152, 49, 34, 0.94);
+  color: #ffffff;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.projects-carousel-content {
+  min-height: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-carousel-category {
+  margin: 0 0 8px;
+
+  color: #983122;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.projects-carousel-content h3 {
+  margin: 0 0 16px;
+
+  color: #5c413c;
+
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.projects-carousel-short-description {
+  margin: 0;
+
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.projects-carousel-long-description {
+  margin: 14px 0 0;
+
+  font-size: 0.98rem;
+  line-height: 1.7;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.projects-carousel-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.projects-carousel-tech-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 32px;
+
+  padding: 8px 14px;
+
+  border: 1px solid rgba(152, 49, 34, 0.18);
+  border-radius: 999px;
+
+  background: rgba(152, 49, 34, 0.1);
+  color: #983122;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.projects-carousel-tech-more {
+  background: #983122;
+  color: #ffffff;
+}
+
+/* =========================
+   LIENS
+========================= */
+
+.projects-carousel-links {
+  margin-top: auto;
+  padding-top: 22px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+.projects-carousel-link,
+.projects-carousel-links a {
+  box-sizing: border-box !important;
+
+  min-width: 90px !important;
+  min-height: 44px !important;
+
+  padding: 12px 18px !important;
+
+  border: 2px solid #983122 !important;
+  border-radius: 999px !important;
+
+  background: #983122 !important;
+  color: #ffffff !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  text-align: center !important;
+}
+
+/* =========================
+   DOTS
+========================= */
+
+.projects-carousel-dots {
+  margin-top: 28px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.projects-carousel-dot {
+  width: 11px;
+  height: 11px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(92, 65, 60, 0.25);
+
+  cursor: pointer;
+}
+
+.projects-carousel-dot.active {
+  background: #983122;
+
+  transform: scale(1.25);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.projects-image-modal {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  padding: 32px;
+
+  background: rgba(92, 65, 60, 0.82);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-image-modal-content {
+  position: relative;
+
+  max-width: min(1000px, 92vw);
+  max-height: 90vh;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border-radius: 24px;
+}
+
+.projects-image-modal-img {
+  display: block;
+
+  max-width: 100%;
+  max-height: 80vh;
+
+  object-fit: contain;
+
+  border-radius: 16px;
+}
+
+.projects-image-modal-close {
+  position: absolute;
+
+  top: -16px;
+  right: -16px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #983122;
+  color: #ffffff;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+}
+
+/* ======================================================
+   TABLETTE
+====================================================== */
+
+@media screen and (max-width: 817px) {
+  .projects-carousel-section {
+    padding: 60px 20px;
+  }
+
+  .projects-carousel-wrapper {
+    width: min(100%, 680px);
+
+    display: block;
+  }
+
+  .projects-carousel-card {
+    width: 100%;
+    height: auto;
+    min-height: 560px;
+
+    padding: 30px;
+  }
+
+  /* on cache les flèches desktop */
+
+  .projects-carousel-wrapper > .projects-carousel-btn {
+    display: none;
+  }
+
+  /* exactement comme Skills */
+
+  .projects-carousel-mobile-navigation {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+  }
+
+  .projects-carousel-mobile-btn {
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #983122;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    line-height: 1;
+
+    cursor: pointer;
+  }
+
+  .projects-carousel-mobile-btn:hover {
+    background: #5c413c;
+  }
+
+  .projects-carousel-dots {
+    margin-top: 24px;
+  }
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media screen and (max-width: 529px) {
+  .projects-carousel-section {
+    min-height: auto;
+
+    padding: 48px 0 56px;
+  }
+
+  .projects-carousel-header {
+    margin-bottom: 28px;
+    padding: 0 18px;
+  }
+
+  .projects-carousel-header h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .projects-carousel-header p {
+    font-size: 0.96rem;
+  }
+
+  .projects-carousel-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .projects-carousel-card {
+    box-sizing: border-box;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+    min-height: 0;
+
+    margin: 0;
+
+    padding: 26px 20px 30px;
+
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+
+    box-shadow: 0 12px 30px rgba(92, 65, 60, 0.1);
+  }
+
+  .projects-carousel-thumbnail-button {
+    width: 180px;
+    height: 112px;
+
+    margin-bottom: 20px;
+  }
+
+  .projects-carousel-content h3 {
+    font-size: 1.55rem;
+  }
+
+  .projects-carousel-short-description {
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .projects-carousel-long-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    -webkit-line-clamp: 3;
+  }
+
+  .projects-carousel-tech-list {
+    margin-top: 18px;
+
+    gap: 8px;
+  }
+
+  .projects-carousel-tech-pill {
+    min-height: 30px;
+
+    padding: 7px 11px;
+
+    font-size: 0.78rem;
+  }
+
+  .projects-carousel-links {
+    margin-top: 24px;
+    padding-top: 0;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .projects-carousel-link,
+  .projects-carousel-links a {
+    width: 100% !important;
+
+    min-width: 0 !important;
+    min-height: 44px !important;
+
+    padding: 10px 14px !important;
+  }
+
+  /* FLÈCHES JUSTE SOUS LA CARTE */
+
+  .projects-carousel-mobile-navigation {
+    margin-top: 18px;
+
+    gap: 14px;
+  }
+
+  .projects-carousel-mobile-btn {
+    width: 38px;
+    height: 38px;
+
+    font-size: 22px;
+  }
+
+  /* DOTS JUSTE SOUS LES FLÈCHES */
+
+  .projects-carousel-dots {
+    margin-top: 22px;
+
+    padding: 0 16px;
+  }
+}
+
+/* =========================
+   TRÈS PETIT MOBILE
+========================= */
+
+@media screen and (max-width: 360px) {
+  .projects-carousel-section {
+    padding-top: 42px;
+  }
+
+  .projects-carousel-card {
+    padding: 24px 16px 26px;
+  }
+
+  .projects-carousel-thumbnail-button {
+    width: 160px;
+    height: 100px;
+  }
+
+  .projects-carousel-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .projects-carousel-tech-pill {
+    font-size: 0.74rem;
+  }
+}
